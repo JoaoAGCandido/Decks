@@ -1,0 +1,146 @@
+!--------the node configuration for this simulation--------
+node_conf 
+{
+  node_number(1:2) =  1,1,
+  if_periodic(1:2) =  .false., .false.,
+}
+
+!----------spatial grid----------
+grid 
+{
+  nx_p(1:2) =  496, 248,
+  coordinates = "cartesian",
+}
+
+!----------time step and global data dump timestep number----------
+time_step 
+{
+  dt     =   0.087,
+  ndump  =   10, 
+}
+
+!----------restart information----------
+restart 
+{
+  ndump_fac = 0,
+  if_restart=.false.,
+}
+
+!----------spatial limits of the simulations----------
+space 
+{
+  xmin(1:2) =   0.0,  0.0,
+  xmax(1:2) =  72.4, 36.2,
+  if_move(1:2) = .false., .false.,
+}
+
+!----------time limits ----------
+time 
+{
+  ! start from where 'ele_beam_1' ended
+  tmin = 17.4, tmax  = 39.15, ! multiples of dt*ndump
+}
+
+!----------field solver set up----------
+el_mag_fld 
+{
+ext_fld = "static",
+
+  type_init_b(1:3) = "file", "file", "file",
+
+  ! Path to HDF5 file
+  init_b_filenames(1) = "../ele_beam_1/MS/FLD/b1/b1-000020.h5",
+  init_b_filenames(2) = "../ele_beam_1/MS/FLD/b2/b2-000020.h5",
+  init_b_filenames(3) = "../ele_beam_1/MS/FLD/b3/b3-000020.h5",
+  
+  ! Name of dataset within the HDF5 file
+  init_b_dsetnames(1) = "b1",
+  init_b_dsetnames(2) = "b2",
+  init_b_dsetnames(3) = "b3",
+
+  ! parameters for regridding
+  bbox_xmin(1:2) = 12.4,  6.2,
+  bbox_xmax(1:2) = 60.0, 30.0,
+
+  type_init_e(1:3) = "file", "file", "file",
+
+  init_e_filenames(1) = "../ele_beam_1/MS/FLD/e1/e1-000020.h5",
+  init_e_filenames(2) = "../ele_beam_1/MS/FLD/e2/e2-000020.h5",
+  init_e_filenames(3) = "../ele_beam_1/MS/FLD/e3/e3-000020.h5",
+  
+  init_e_dsetnames(1) = "e1",
+  init_e_dsetnames(2) = "e2",
+  init_e_dsetnames(3) = "e3",
+
+  ! parameters for regridding
+  ebox_xmin(1:2) = 12.4,  6.2,
+  ebox_xmax(1:2) = 60.0, 30.0,
+
+  ! Loading fields also works for initial (non-external) fields,
+  ! just change "ext" to "init" above
+
+  interp_type = "linear",
+}
+
+!----------boundary conditions for em-fields ----------
+emf_bound 
+{
+  type(1:2,1) =   "open", "open",
+  type(1:2,2) =   "open", "open",
+}
+
+!----------diagnostic for electromagnetic fields---------- 
+diag_emf 
+{
+  ndump_fac = 1,
+  reports = "e1", "e2", "e3", "b1", "b2", "b3",
+}
+
+!----------number of particle species----------
+particles
+{
+  interpolation = "cubic",
+  num_species = 1,
+}
+
+!----------information for species 1----------
+species 
+{
+  name = "electrons",
+  num_par_max = 1000000,
+  rqm= -1.0,
+  num_par_x(1:2) = 10, 10,
+  add_tag = .true.,
+
+  init_type = 'file',
+}
+
+!---read in file---!
+spec_file
+{
+  box_xmin(1:2) = 12.4,  6.2,
+  box_xmax(1:2) = 60.0, 30.0,
+  filename = "../ele_beam_1/MS/RAW/electrons/RAW-electrons-000020.h5",
+}
+
+!----------boundary conditions for this species----------
+spe_bound 
+{
+  type(1:2,1) = "open", "open",
+  type(1:2,2) = "open", "open",
+}
+
+!----------diagnostic for this species----------
+diag_species 
+{
+  ndump_fac_raw = 1,
+}
+
+
+
+smooth
+{
+  type = "5pass",
+}
+
+! --------------------- end of osiris input file ---------------
