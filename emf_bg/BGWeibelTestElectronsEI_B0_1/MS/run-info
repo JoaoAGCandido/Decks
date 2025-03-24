@@ -167,5 +167,6 @@ smooth
 {
 type(1:3) = "5pass", "5pass", "5pass", 
 }
+
 """
 }
