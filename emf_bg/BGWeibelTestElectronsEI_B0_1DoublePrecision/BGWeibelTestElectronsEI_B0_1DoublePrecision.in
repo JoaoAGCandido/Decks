@@ -47,9 +47,9 @@ el_mag_fld
   type_init_b(1:3) = "file", "file", "file",
 
   ! Path to HDF5 file
-  init_b_filenames(1) = "../WeibelTestElectronsEI_B0_1/MS/FLD/b1/b1-000055.h5",
-  init_b_filenames(2) = "../WeibelTestElectronsEI_B0_1/MS/FLD/b2/b2-000055.h5",
-  init_b_filenames(3) = "../WeibelTestElectronsEI_B0_1/MS/FLD/b3/b3-000055.h5",
+  init_b_filenames(1) = "../../Weibel/WeibelTestElectronsEI_B0_1/MS/FLD/b1/b1-000055.h5",
+  init_b_filenames(2) = "../../Weibel/WeibelTestElectronsEI_B0_1/MS/FLD/b2/b2-000055.h5",
+  init_b_filenames(3) = "../../Weibel/WeibelTestElectronsEI_B0_1/MS/FLD/b3/b3-000055.h5",
 
   ! Name of dataset within the HDF5 file
   init_b_dsetnames(1) = "b1",
@@ -62,9 +62,9 @@ el_mag_fld
 
   type_init_e(1:3) = "file", "file", "file",
 
-  init_e_filenames(1) = "../WeibelTestElectronsEI_B0_1/MS/FLD/e1/e1-000055.h5",
-  init_e_filenames(2) = "../WeibelTestElectronsEI_B0_1/MS/FLD/e2/e2-000055.h5",
-  init_e_filenames(3) = "../WeibelTestElectronsEI_B0_1/MS/FLD/e3/e3-000055.h5",
+  init_e_filenames(1) = "../../Weibel/WeibelTestElectronsEI_B0_1/MS/FLD/e1/e1-000055.h5",
+  init_e_filenames(2) = "../../Weibel/WeibelTestElectronsEI_B0_1/MS/FLD/e2/e2-000055.h5",
+  init_e_filenames(3) = "../../Weibel/WeibelTestElectronsEI_B0_1/MS/FLD/e3/e3-000055.h5",
   
   init_e_dsetnames(1) = "e1",
   init_e_dsetnames(2) = "e2",
