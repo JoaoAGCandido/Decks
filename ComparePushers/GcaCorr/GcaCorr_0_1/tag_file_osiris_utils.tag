@@ -1,8 +1,7 @@
 ! particle tag list
-! original file : /Users/fiuza/RAW-test_electrons-000000.h5
-! generated on Tue Apr  1 14:17:09 2025
+! generated on Tue Apr 01 17:32:22 2025
 ! number of tags
-      1000
+       1000
 ! particle tag list
          8          1
          8          2
