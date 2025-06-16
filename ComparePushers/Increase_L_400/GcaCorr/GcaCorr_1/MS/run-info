@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         2348628070.,
+  "input_deck_crc":         3591012986.,
   "input_deck": """
 simulation 
 {
@@ -157,7 +157,7 @@ udist {
 profile
 {
   profile_type(1) = "math func",
-  math_func_expr = "if((x1<250.)&&(x1>200.)&&(x2<250.)&&(x2>20.)&&(x3<250.)&&(x3>200.), 1.0, 0.0)",
+  math_func_expr = "if((x1<250.)&&(x1>200.)&&(x2<250.)&&(x2>200.)&&(x3<250.)&&(x3>200.), 1.0, 0.0)",
   den_min = 1.d-12,
 }
 
