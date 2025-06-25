@@ -1,0 +1,109 @@
+node_conf
+{
+  node_number(1:1) =  1,
+  if_periodic(1:1) =  .true.,
+}
+
+!----------spatial grid----------
+grid
+{
+  nx_p(1:1) =  100,
+  coordinates = "cartesian",
+}
+
+!----------time step and global data dump timestep number----------
+time_step
+{
+  dt     =   0.0035,
+  ndump  =    1,
+}
+
+!----------restart information----------
+restart
+{
+  ndump_fac = 10,
+  if_restart=.false.,
+}
+
+!----------spatial limits of the simulations----------
+space
+{
+  xmin(1:1) =  0.000d0,
+  xmax(1:1) =  10.0d0,
+  if_move(1:1) = .false.,
+}
+
+!----------time limits ----------
+time
+{
+  tmin = 0.0d0, tmax  = 0.0030d0,
+}
+
+!----------field solver set up----------
+el_mag_fld
+{
+  type_init_b = "math func", "math func", "math func",
+  !init_b_mfunc(1:3) = "-0.01*x1*x1+1+1*x1", "0.000d0", "0.000d0",
+  init_b_mfunc(1:3) = "sin(x1 / 10.0 * 2.0 * 3.1415)", "2.0", "3.0",
+  type_init_e = "math func", "math func", "math func",
+  init_e_mfunc(1:3) = "1.1000d0", "2.200d0", "3.3000d0",
+  !init_b_mfunc(1:3) = "cos(x1/100.0*2*3.1415)", "0.000d0", "0.000d0",
+}
+
+!----------boundary conditions for em-fields ----------
+emf_bound
+{
+  type(1:2,1) = "open", "open",
+}
+
+diag_emf 
+{
+  ndump_fac = 1,
+  ndump_fac_ene_int = 1,
+  reports = "e1", "b1", "e2", "b2", "e3", "b3"
+}
+
+!----------number of particle species----------
+particles
+{
+  interpolation = "linear",
+  num_species = 1,
+}
+
+!----------information for species 1----------
+species
+{
+  name = "pos_electrons",
+  num_par_max = 2048,
+  rqm=-1.0,
+  num_par_x(1:1) = 1,
+  push_type = "gca_corr",
+  gca_treshold = -1.0,
+}
+
+!----------inital proper velocities-----------------
+udist {
+  uth(1:3) = 0.0d0 , 0.0d0 , 0.0d0 ,
+  ufl(1:3) = 0.1d0 , 0.0d0 , 0.0d0 ,
+}
+
+!----------density profile for this species----------
+profile
+{
+  density=1.0,
+  den_min = 1.d-12,
+}
+
+!----------boundary conditions for this species----------
+spe_bound
+{
+}
+
+!----------diagnostic for this species----------
+diag_species
+{
+  ndump_fac_raw=1
+}
+
+
+
