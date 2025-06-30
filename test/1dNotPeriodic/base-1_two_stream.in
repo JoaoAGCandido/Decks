@@ -7,7 +7,7 @@ node_conf
 !----------spatial grid----------
 grid
 {
-  nx_p(1:1) =  100,
+  nx_p(1:1) =  20,
   coordinates = "cartesian",
 }
 
@@ -53,7 +53,7 @@ el_mag_fld
 !----------boundary conditions for em-fields ----------
 emf_bound
 {
-  type(1:2,1) =  "conducting", "open", 
+  type(1:2,1) =   "open", "conducting",
 }
 
 diag_emf 

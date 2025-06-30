@@ -1,6 +1,6 @@
                                   Event           Total [s]
 -----------------------------------------------------------
-                                   loop           0.959E-02
+                                   loop           0.121E-01
            dynamic load balance (total)           0.000E+00
                      dynlb get int load           0.000E+00
                        dynlb get new lb           0.000E+00
@@ -10,20 +10,20 @@
             writing restart information           0.000E+00
                        load diagnostics           0.200E-05
                       dynlb sum up load           0.000E+00
-                    update emf boundary           0.170E-04
+                    update emf boundary           0.150E-04
                            field solver           0.110E-04
                            field smooth           0.000E+00
                         psi calculation           0.000E+00
-                        EMF diagnostics           0.806E-02
+                        EMF diagnostics           0.106E-01
            electric current diagnostics           0.000E+00
-                         current smooth           0.300E-04
-                update current boundary           0.500E-05
-                        advance deposit           0.147E-03
+                         current smooth           0.100E-05
+                update current boundary           0.300E-05
+                        advance deposit           0.105E-03
                          reduce current           0.000E+00
-               update particle boundary           0.230E-04
+               update particle boundary           0.200E-04
                       cathode injection           0.000E+00
                       neutral injection           0.000E+00
-                   particle diagnostics           0.123E-02
+                   particle diagnostics           0.135E-02
                   particle sort (total)           0.000E+00
                 particle sort, gen. idx           0.000E+00
      particle sort, rearrange particles           0.000E+00
