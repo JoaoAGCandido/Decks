@@ -43,8 +43,9 @@ time
 el_mag_fld
 {
   type_init_b = "math func", "math func", "math func",
-  !init_b_mfunc(1:3) = "-0.01*x1*x1+1+1*x1", "0.000d0", "0.000d0",
+  !init_b_mfunc(1:3) = "0.000d0", "0.000d0", "0.000d0",
   init_b_mfunc(1:3) = "sin(x1 / 10.0 * 2.0 * 3.1415)", "2.0", "3.0",
+  !init_b_mfunc(1:3) = "x1", "2.0", "3.0",
   type_init_e = "math func", "math func", "math func",
   init_e_mfunc(1:3) = "1.1000d0", "2.200d0", "3.3000d0",
   !init_b_mfunc(1:3) = "cos(x1/100.0*2*3.1415)", "0.000d0", "0.000d0",

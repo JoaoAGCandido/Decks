@@ -1,6 +1,6 @@
 build_info = {
-  "version": "4.4.4-300-g478b797-dirty",
-  "branch": "gcaCorrCurv",
+  "version": "4.4.4-404-g6e8611a-dirty",
+  "branch": "testDrifts",
   "dimensions": "1",
   "precision": "DOUBLE",
   "build_type": "production",
@@ -8,7 +8,7 @@ build_info = {
   "build_tool": "make",
   "build_flags": {
     "FPP"  :"gcc -C -E -x assembler-with-cpp -D_OPENMP -DHDF5",
-    "FPPF" :"-DP_X_DIM=1 -DOS_REV=\"4.4.4-300-g478b797-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
+    "FPPF" :"-DP_X_DIM=1 -DOS_REV=\"4.4.4-404-g6e8611a-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
     "F90"  :"gfortran -Wa,-q -cpp",
     "F90F" :"-pipe -ffree-line-length-none -fno-range-check --openmp -Ofast -march=native -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -I/home/exxxx5/hdf5/include",
     "CF"   :"-Ofast -march=native -std=c99 -I/home/exxxx5/openmpi/include -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         3904203260.,
+  "input_deck_crc":         3519945536.,
   "input_deck": """
 node_conf
 {
@@ -64,8 +64,9 @@ time
 el_mag_fld
 {
   type_init_b = "math func", "math func", "math func",
-  !init_b_mfunc(1:3) = "-0.01*x1*x1+1+1*x1", "0.000d0", "0.000d0",
+  !init_b_mfunc(1:3) = "0.000d0", "0.000d0", "0.000d0",
   init_b_mfunc(1:3) = "sin(x1 / 10.0 * 2.0 * 3.1415)", "2.0", "3.0",
+  !init_b_mfunc(1:3) = "x1", "2.0", "3.0",
   type_init_e = "math func", "math func", "math func",
   init_e_mfunc(1:3) = "1.1000d0", "2.200d0", "3.3000d0",
   !init_b_mfunc(1:3) = "cos(x1/100.0*2*3.1415)", "0.000d0", "0.000d0",
