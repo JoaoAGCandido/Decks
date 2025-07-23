@@ -1,0 +1,1 @@
+Just parallel component of velocity from boris
