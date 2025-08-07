@@ -1,24 +1,3 @@
-build_info = {
-  "version": "4.4.4-311-g0ddc671-dirty",
-  "branch": "gca",
-  "dimensions": "2",
-  "precision": "DOUBLE",
-  "build_type": "production",
-  "system": "linux.gnu",
-  "build_tool": "make",
-  "build_flags": {
-    "FPP"  :"gcc -C -E -x assembler-with-cpp -D_OPENMP -DHDF5",
-    "FPPF" :"-DP_X_DIM=2 -DOS_REV=\"4.4.4-311-g0ddc671-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
-    "F90"  :"gfortran -Wa,-q -cpp",
-    "F90F" :"-pipe -ffree-line-length-none -fno-range-check --openmp -Ofast -march=native -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -I/home/exxxx5/hdf5/include",
-    "CF"   :"-Ofast -march=native -std=c99 -I/home/exxxx5/openmpi/include -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
-    "cc"   :"gcc -Wa,-q",
-    "LDF"  :" -L/home/exxxx5/hdf5/lib -lhdf5_fortran -lhdf5 -lm -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -L/home/exxxx5/openmpi/lib -Wl,-rpath -Wl,/home/exxxx5/openmpi/lib -Wl,--enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi ",
-   }
-}
-run_info = {
-  "input_deck_crc":         1414188249.,
-  "input_deck": """
 !----------global simulation parameters---------
 simulation
 {
@@ -158,6 +137,3 @@ type(1:2) = "5pass", "5pass",
 }
 
 ! --------------------- end of osiris input file ---------------
-
-"""
-}

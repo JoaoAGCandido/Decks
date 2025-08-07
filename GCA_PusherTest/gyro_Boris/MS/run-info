@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         1414188249.,
+  "input_deck_crc":         2463513802.,
   "input_deck": """
 !----------global simulation parameters---------
 simulation
@@ -116,7 +116,6 @@ species
   rqm=-1,
   num_par_x(1:2) = 1, 1,
   add_tag = .true.,
-  push_type="gca"
 }
 
 udist
