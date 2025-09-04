@@ -1,5 +1,5 @@
 build_info = {
-  "version": "4.4.4-317-gedb181e-dirty",
+  "version": "4.4.4-319-gecbe011-dirty",
   "branch": "gca",
   "dimensions": "3",
   "precision": "DOUBLE",
@@ -8,7 +8,7 @@ build_info = {
   "build_tool": "make",
   "build_flags": {
     "FPP"  :"gcc -C -E -x assembler-with-cpp -D_OPENMP -DHDF5",
-    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-317-gedb181e-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-319-gecbe011-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
     "F90"  :"gfortran -Wa,-q -cpp",
     "F90F" :"-pipe -ffree-line-length-none -fno-range-check --openmp -Ofast -march=native -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -I/home/exxxx5/hdf5/include",
     "CF"   :"-Ofast -march=native -std=c99 -I/home/exxxx5/openmpi/include -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         3930741590.,
+  "input_deck_crc":         1878265239.,
   "input_deck": """
 simulation 
 {
@@ -27,20 +27,20 @@ simulation
 node_conf
 {
   node_number(1:3) =  1, 1, 1,
-  if_periodic(1:3) =  .true., .true., .true., 
+  if_periodic(1:3) =  .false., .false., .false., 
 }
 
 !----------spatial grid----------
 grid
 {
-  nx_p(1:3) =  80, 80, 80,
+  nx_p(1:3) =  50, 50, 50,
   coordinates = "cartesian",
 }
 
 !----------time step and global data dump timestep number----------
 time_step
 {
-  dt     =   0.28,
+  dt     =   0.1,
   ndump  =    1,
 }
 
@@ -55,24 +55,24 @@ restart
 space
 {
   xmin(1:3) =  0.000d0, 0.000d0, 0.000d0,
-  xmax(1:3) =  40., 40., 40.,
+  xmax(1:3) =  10., 10., 10.,
   if_move(1:3) = .false., .false., .false.,
 }
 
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 50.0d0,
+  tmin = 0.0d0, tmax  = 100.0d0,
 }
 
 !----------field solver set up----------
 el_mag_fld
 {
   ext_fld = "static",
-  type_ext_b = "uniform",
-  ext_b0(1:3) = 1.5, 0., 0.,
-  type_ext_e = "uniform",
-  ext_e0(1:3) = 0., 0., 0.,
+  type_ext_b(1:3) = "math func", "math func", "math func",
+  ext_b_mfunc(1) = "- 4 * x2 / sqrt(x1*x1 + x2*x2)",
+  ext_b_mfunc(2) = "4 * x1 / sqrt(x1*x1 + x2*x2)",
+  ext_b_mfunc(3) = "0.0",
 }
 
 !----------boundary conditions for em-fields ----------
@@ -104,26 +104,27 @@ species
   rqm = -1.0,
   num_par_x(1:3) = 1, 1, 1,
   add_tag = .true.,
-  push_type = "gca",
 }
 
 !----------inital proper velocities----------
 udist {
-  ufl(1:3)=  0.01d0 , 0.0d0 , 0.01d0 ,
+  ufl(1:3)=  0.0d0 , 0.1d0 , 0.0 ,
 }
 
 !----------density profile for this species----------
 profile
 {
   profile_type(1) = "math func",
-  ! math_func_expr = "if((x1<24.8)&&(x1>24.7)&&(x2<24.8)&&(x2>24.7)&&(x3<24.8)&&(x3>24.7), 1.d-11, 0.0)",
-  math_func_expr = "if((x1<25.)&&(x1>20.)&&(x2<25.)&&(x2>20.)&&(x3<25.)&&(x3>20.), 1.d-11, 0.0)",
+  math_func_expr = "if((x1<5.5)&&(x1>4.5)&&(x2<5.5)&&(x2>4.5)&&(x3<5.5)&&(x3>4.5), 1.d-11, 0.0)",
   den_min = 1.d-12,
 }
 
 !----------boundary conditions for this species----------
 spe_bound
 {
+type(1:2,1) =    "open",    "open",
+type(1:2,2) =    "open",    "open",
+type(1:2,3) =    "open",    "open",
 }
 
 !----------diagnostic for this species----------
