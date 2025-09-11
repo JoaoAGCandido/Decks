@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         1188753664.,
+  "input_deck_crc":         1509362901.,
   "input_deck": """
 simulation 
 {
@@ -62,7 +62,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 25.0d0,
+  tmin = 0.0d0, tmax  = 15.0d0,
 }
 
 !----------field solver set up----------

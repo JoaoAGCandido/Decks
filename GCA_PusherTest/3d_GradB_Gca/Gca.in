@@ -41,7 +41,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 25.0d0,
+  tmin = 0.0d0, tmax  = 15.0d0,
 }
 
 !----------field solver set up----------
