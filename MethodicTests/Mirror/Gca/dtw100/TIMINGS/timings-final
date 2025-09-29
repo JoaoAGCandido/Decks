@@ -1,0 +1,29 @@
+                                  Event           Total [s]
+-----------------------------------------------------------
+                                   loop           0.305E+02
+           dynamic load balance (total)           0.000E+00
+                     dynlb get int load           0.000E+00
+                       dynlb get new lb           0.000E+00
+               dynlb reshape simulation           0.000E+00
+   dynlb reshape simulation (particles)           0.000E+00
+       dynlb reshape simulation (grids)           0.000E+00
+            writing restart information           0.000E+00
+                       load diagnostics           0.276E-03
+                      dynlb sum up load           0.000E+00
+                    update emf boundary           0.543E+00
+                           field solver           0.000E+00
+                           field smooth           0.000E+00
+                        psi calculation           0.000E+00
+                        EMF diagnostics           0.122E-03
+           electric current diagnostics           0.480E-04
+                         current smooth           0.923E+01
+                update current boundary           0.680E+00
+                        advance deposit           0.451E+00
+                         reduce current           0.000E+00
+               update particle boundary           0.353E-02
+                      cathode injection           0.120E-04
+                      neutral injection           0.110E-04
+                   particle diagnostics           0.123E+00
+                  particle sort (total)           0.654E-02
+                particle sort, gen. idx           0.617E-02
+     particle sort, rearrange particles           0.322E-03

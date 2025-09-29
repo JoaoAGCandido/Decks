@@ -49,6 +49,7 @@ time
 el_mag_fld
 {
   ext_fld = "static",
+  type_init_b(1:3) = "math func", "math func", "math func",
   init_b_mfunc(1) = "-10.0*x1*x3",
   init_b_mfunc(2) = "-10.0*x2*x3",
   init_b_mfunc(3) = "1000.0 + 10.0*x3*x3",

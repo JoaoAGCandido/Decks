@@ -20,7 +20,7 @@ grid
 !----------time step and global data dump timestep number----------
 time_step
 {
-  dt     =   628.3185307179586476925286766559,
+  dt     =   6.283185307179586476925286766559,
   ndump  =    1,
 }
 
