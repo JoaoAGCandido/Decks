@@ -1,4 +1,4 @@
-0simulation 
+simulation 
 {
   enforce_rng_constancy  = .true.,
   disableEmfAdvance = .True.,
