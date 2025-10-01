@@ -93,14 +93,14 @@ species
 
 !----------inital proper velocities----------
 udist {
-  ufl(1:3)=  0.050 , 0.050 , 0.0010 ,
+  ufl(1:3)=  -0.050 , 0.050 , 0.0010 ,
 }
 
 !----------density profile for this species----------
 profile
 {
   profile_type(1) = "math func",
-  math_func_expr = "if((x1<6.0)&&(x1>5.0)&&(x2<30.5)&&(x2>29.5)&&(x3<6.0)&&(x3>5.0), 1.0, 0.0)",
+  math_func_expr = "if((x1<6.0)&&(x1>5.0)&&(x2<36.0)&&(x2>35.0)&&(x3<6.0)&&(x3>5.0), 1.0, 0.0)",
   den_min = 1.d-12,
 }
 
