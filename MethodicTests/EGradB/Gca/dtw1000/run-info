@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         1788039959.,
+  "input_deck_crc":         1953979302.,
   "input_deck": """
 simulation 
 {
@@ -76,9 +76,9 @@ el_mag_fld
   init_b_mfunc(3) = "0.0",
 
   type_init_e(1:3) = "math func", "math func", "math func",
-  init_e_mfunc(1) = "-2.0",
-  init_e_mfunc(2) = "0.0",
-  init_e_mfunc(3) = "0.0",
+  init_e_mfunc(1) = "-0.001",
+  init_e_mfunc(2) = "0.001",
+  init_e_mfunc(3) = "0.001",
 }
 
 !----------boundary conditions for em-fields ----------
