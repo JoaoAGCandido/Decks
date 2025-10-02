@@ -1,0 +1,14 @@
+#!/bin/bash
+# file: RunAllJobs
+#run with:
+#bash RunAllJobs
+
+set -euo pipefail
+
+# Walk through all runJob files and submit them
+find . -type f -name "runJob" | while read -r jobfile; do
+  dir=$(dirname "$jobfile")
+  echo "Submitting $jobfile in $dir"
+  ( cd "$dir" && sbatch runJob )
+done
+

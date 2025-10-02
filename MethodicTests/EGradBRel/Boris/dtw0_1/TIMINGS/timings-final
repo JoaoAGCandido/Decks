@@ -1,0 +1,31 @@
+  Iterations =       100000
+  
+                                  Event             Avg [s]             Min [s]             Max [s]
+------------------------------------------------------------------------------
+                                   loop        0.587297E+04        0.587285E+04        0.587312E+04
+           dynamic load balance (total)        0.000000E+00        0.000000E+00        0.000000E+00
+                     dynlb get int load        0.000000E+00        0.000000E+00        0.000000E+00
+                       dynlb get new lb        0.000000E+00        0.000000E+00        0.000000E+00
+               dynlb reshape simulation        0.000000E+00        0.000000E+00        0.000000E+00
+   dynlb reshape simulation (particles)        0.000000E+00        0.000000E+00        0.000000E+00
+       dynlb reshape simulation (grids)        0.000000E+00        0.000000E+00        0.000000E+00
+            writing restart information        0.000000E+00        0.000000E+00        0.000000E+00
+                       load diagnostics        0.919979E-01        0.565860E-01        0.127088E+00
+                      dynlb sum up load        0.000000E+00        0.000000E+00        0.000000E+00
+                    update emf boundary        0.396701E+03        0.365229E+03        0.452638E+03
+                           field solver        0.000000E+00        0.000000E+00        0.000000E+00
+                           field smooth        0.000000E+00        0.000000E+00        0.000000E+00
+                        psi calculation        0.000000E+00        0.000000E+00        0.000000E+00
+                        EMF diagnostics        0.638569E-01        0.480400E-01        0.835140E-01
+           electric current diagnostics        0.433401E-01        0.263020E-01        0.530980E-01
+                         current smooth        0.228866E+04        0.227696E+04        0.232643E+04
+                update current boundary        0.108270E+04        0.841291E+03        0.116232E+04
+                        advance deposit        0.796075E+01        0.658046E+01        0.112204E+02
+                         reduce current        0.000000E+00        0.000000E+00        0.000000E+00
+               update particle boundary        0.101524E+03        0.181648E+02        0.154741E+03
+                      cathode injection        0.263555E-01        0.211050E-01        0.308460E-01
+                      neutral injection        0.108436E-01        0.106090E-01        0.118960E-01
+                   particle diagnostics        0.427175E+02        0.110363E+01        0.329699E+03
+                  particle sort (total)        0.149767E+00        0.000000E+00        0.449706E+00
+                particle sort, gen. idx        0.858304E-01        0.000000E+00        0.257965E+00
+     particle sort, rearrange particles        0.524504E-01        0.000000E+00        0.158832E+00
