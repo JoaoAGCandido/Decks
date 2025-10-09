@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=GyroBorisLongLong1000
+#SBATCH --job-name=GyroRelBorisLongLong100
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-01:00:00

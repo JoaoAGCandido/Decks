@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=GyroBorisLongLong1000
+#SBATCH --job-name=GyroBorisLongLong10
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-01:00:00
@@ -13,4 +13,5 @@ module load FFTW
 
 BIN=../../../../../osiris_JCDev/bin/osiris-3D-deucalion_input_disable_gca_gcaCorr.e
 
-srun "${BIN}" BorisLongLong.in
+srun "${BIN}" Boris
+.in
