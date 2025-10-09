@@ -13,5 +13,4 @@ module load FFTW
 
 BIN=../../../../../osiris_JCDev/bin/osiris-3D-deucalion_input_disable_gca_gcaCorr.e
 
-srun "${BIN}" Boris
-.in
+srun "${BIN}" Boris.in
