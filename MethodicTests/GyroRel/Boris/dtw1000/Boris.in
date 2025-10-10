@@ -116,7 +116,7 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {
   ndump_fac_ene = 1,
-  ndump_fac_raw = 10,
+  ndump_fac_raw = 10000,
   ndump_fac_tracks = 1,
   niter_tracks = 1,
   file_tags = "tag_file_osiris_utils.tag",

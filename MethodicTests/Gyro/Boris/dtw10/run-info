@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         1404568468.,
+  "input_deck_crc":         2216965350.,
   "input_deck": """
 simulation 
 {
@@ -28,7 +28,7 @@ simulation
 node_conf
 {
   node_number(1:3) =  2, 2, 2,
-  if_periodic(1:3) =  .false., .false., .false., 
+  if_periodic(1:3) =  .true., .true., .true., 
 }
 
 !----------spatial grid----------
