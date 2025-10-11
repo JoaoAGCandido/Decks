@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=EXBRelBorisLongLong10
+#SBATCH --account=f202500196cpcaa3a
+#SBATCH --partition=normal-arm
+#SBATCH --time=0-01:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+
+module purge
+module load OpenMPI
+ml HDF5/1.12.2-gompi-2022a
+module load FFTW
+
+BIN=../../../../../osiris_JCDev/bin/osiris-3D-deucalion_input_disable_gca_gcaCorr.e
+
+srun "${BIN}" Boris.in
