@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=GradBRelBorisLongLong1000
+#SBATCH --job-name=GradBRelBorisLongLongLong1000
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
-#SBATCH --time=0-01:00:00
+#SBATCH --time=0-03:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 

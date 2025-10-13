@@ -1,23 +1,23 @@
 build_info = {
-  "version": "4.4.4-441-g4936636-dirty",
-  "branch": "disableSolver_inputField_gca_gcaCorr",
+  "version": "4.4.4-443-g4f64396",
+  "branch": "deucalion_input_disable_gca_gcaCorr",
   "dimensions": "3",
   "precision": "DOUBLE",
   "build_type": "production",
-  "system": "linux.gnu",
+  "system": "deucalion.arm",
   "build_tool": "make",
   "build_flags": {
-    "FPP"  :"gcc -C -E -x assembler-with-cpp -D_OPENMP -DHDF5",
-    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-441-g4936636-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
-    "F90"  :"gfortran -Wa,-q -cpp",
-    "F90F" :"-pipe -ffree-line-length-none -fno-range-check --openmp -Ofast -march=native -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -I/home/exxxx5/hdf5/include",
-    "CF"   :"-Ofast -march=native -std=c99 -I/home/exxxx5/openmpi/include -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
-    "cc"   :"gcc -Wa,-q",
-    "LDF"  :" -L/home/exxxx5/hdf5/lib -lhdf5_fortran -lhdf5 -lm -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -L/home/exxxx5/openmpi/lib -Wl,-rpath -Wl,/home/exxxx5/openmpi/lib -Wl,--enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi ",
+    "FPP"  :"gfortran -C -E -x assembler-with-cpp -DHDF5",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-443-g4f64396\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
+    "F90"  :"mpif90 -cpp",
+    "F90F" :"-pipe -ffree-line-length-none -fno-range-check -O2 -ftree-vectorize -march=native -fno-math-errno -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/include -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/include/ -I/eb/aarch64/software/FFTW/3.3.10-GCC-14.2.0/include",
+    "CF"   :"-Ofast -std=c99 -O2 -ftree-vectorize -march=native -fno-math-errno -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
+    "cc"   :"mpicc",
+    "LDF"  :"-lstdc++ -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/lib/ -lhdf5 -lhdf5_fortran -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/hwloc/2.7.1-GCCcore-11.3.0/lib -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/libevent/2.1.12-GCCcore-11.3.0/lib -Wl,-rpath -Wl,/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -Wl,-rpath -Wl,/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/hwloc/2.7.1-GCCcore-11.3.0/lib -Wl,-rpath -Wl,/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/libevent/2.1.12-GCCcore-11.3.0/lib -Wl,--enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -L/eb/aarch64/software/FFTW/3.3.10-GCC-14.2.0/lib -lfftw3",
    }
 }
 run_info = {
-  "input_deck_crc":         1671232455.,
+  "input_deck_crc":         3533170582.,
   "input_deck": """
 simulation 
 {
@@ -63,7 +63,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 62.83185307179586476925286766559,
+  tmin = 0.0d0, tmax  = 628.3185307179586476925286766559,
 }
 
 !----------field solver set up----------
