@@ -42,7 +42,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 6283.185307179586476925286766559,
+  tmin = 0.0d0, tmax  = 62!83.185307179586476925286766559,
 }
 
 !----------field solver set up----------
@@ -52,7 +52,7 @@ el_mag_fld
   type_init_b(1:3) = "math func", "math func", "math func",
   init_b_mfunc(1) = "0.0",
   init_b_mfunc(2) = "0.0",
-  init_b_mfunc(3) = "-1000.0 * (1 + (x2 - 30.0)/10.0)",
+  init_b_mfunc(3) = "1000.0 * (1 + (x2 - 30.0)/10.0)",
 
   type_init_e(1:3) = "math func", "math func", "math func",
   init_e_mfunc(1) = "0.0",
