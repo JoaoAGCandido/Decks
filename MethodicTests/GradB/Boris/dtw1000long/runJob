@@ -2,7 +2,7 @@
 #SBATCH --job-name=GradBBorisLongLongLong1000
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
-#SBATCH --time=0-03:00:00
+#SBATCH --time=0-47:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 

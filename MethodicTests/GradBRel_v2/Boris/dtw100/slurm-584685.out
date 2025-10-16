@@ -1,0 +1,223 @@
+
+The following have been reloaded with a version change:
+  1) GCC/13.3.0 => GCC/11.3.0
+  2) GCCcore/13.3.0 => GCCcore/11.3.0
+  3) OpenMPI/5.0.3-GCC-13.3.0 => OpenMPI/4.1.4-GCC-11.3.0
+  4) PMIx/5.0.2-GCCcore-13.3.0 => PMIx/4.1.2-GCCcore-11.3.0
+  5) UCC/1.3.0-GCCcore-13.3.0 => UCC/1.0.0-GCCcore-11.3.0
+  6) UCX/1.16.0-GCCcore-13.3.0 => UCX/1.12.1-GCCcore-11.3.0
+  7) XZ/5.4.5-GCCcore-13.3.0 => XZ/5.2.5-GCCcore-11.3.0
+  8) binutils/2.42-GCCcore-13.3.0 => binutils/2.38-GCCcore-11.3.0
+  9) hwloc/2.10.0-GCCcore-13.3.0 => hwloc/2.7.1-GCCcore-11.3.0
+ 10) libevent/2.1.12-GCCcore-13.3.0 => libevent/2.1.12-GCCcore-11.3.0
+ 11) libfabric/1.21.0-GCCcore-13.3.0 => libfabric/1.15.1-GCCcore-11.3.0
+ 12) libpciaccess/0.18.1-GCCcore-13.3.0 => libpciaccess/0.16-GCCcore-11.3.0
+ 13) libxml2/2.12.7-GCCcore-13.3.0 => libxml2/2.9.13-GCCcore-11.3.0
+ 14) numactl/2.0.18-GCCcore-13.3.0 => numactl/2.0.14-GCCcore-11.3.0
+ 15) zlib/1.3.1-GCCcore-13.3.0 => zlib/1.2.12-GCCcore-11.3.0
+
+
+The following have been reloaded with a version change:
+  1) GCC/11.3.0 => GCC/14.2.0
+  2) GCCcore/11.3.0 => GCCcore/14.2.0
+  3) binutils/2.38-GCCcore-11.3.0 => binutils/2.42-GCCcore-14.2.0
+  4) zlib/1.2.12-GCCcore-11.3.0 => zlib/1.3.1-GCCcore-14.2.0
+
+ Osiris running on host cna1623.deucalion.macc.fccn.pt
+ Current working directory = /home/jcandido/Decks/MethodicTests/GradBRel_v2/Boris/dtw100
+ Timer resolution is    9.9999999999999995E-007  seconds
+ 
+ ***************************************************************
+ *                     Using Fortran version                   *
+ ***************************************************************
+ 
+ Software revision: 4.4.4-443-g4f64396
+ 
+ 
+ Reading input file, full name: Boris.in
+ 
+ Reading global simulation options... 
+ Reading parallel node configuration... 
+ Reading grid configuration...
+ cartesian coordinates
+ Reading tstep configuration... 
+ Reading restart configuration... 
+ Reading g_space configuration... 
+ Reading time configuration... 
+ Reading emf configuration... 
+  - no smoothing specified
+ Reading part configuration... 
+ - species (1) configuration...
+    Species name : test_electrons
+ Reading zpulses ... 
+ Reading current configuration...
+  - no diagnostics specified
+ Reading antenna configuration...
+  - no antenna array specified
+ 
+ Initializing simulation:
+  Setting up no_co
+  - Running on 8 processes
+  setting up topology
+  - Using MPI_Cart_create based topology
+  Setting up grid
+  - setting parallel grid boundaries...
+  Setting up random number seed
+  Setting up tstep
+  Setting up restart
+  Setting up g_space
+  Setting up time
+  Setting up boundary buffers
+  Setting up emf
+  - setting up external fields...
+  Setting up current
+  Setting up zpulses
+  Setting up particles
+  Setting up antenna array
+  Setting up diagnostics utilities
+ 
+ Initialization complete!
+  
+ Numerical precision :
+ - Fields    : double precision
+ - Particles : double precision
+  
+ Global random number generator
+  - Algorithm: Grid o' Mersenne Twister
+  
+ Field Solver:
+ - Yee solver
+ - Guard Cells:
+     x1 : [2, 3]
+     x2 : [2, 3]
+     x3 : [2, 3]
+ - Using static external field source
+ - No field smoothing
+  
+ - EM Field Boundary condtions:
+     x1 : [Periodic, Periodic]
+     x2 : [Periodic, Periodic]
+     x3 : [Periodic, Periodic]
+  
+Particles:
+- Number of species: 1
+- Quadratic (2nd order) interpolation
+- Using staggered Yee grid values for interpolation
+  
+ test_electrons :
+ - Standard (Boris) pusher
+  
+ Electrical current :
+ - Using smoothing
+ 
+Global dynamic memory status:
+- Number of allocated memory blocks (total/node max): 448 / 56
+- Total Allocated Memory (total/node max): 352.9 MB / 44.1 MB
+ 
+ Starting main simulation loop:
+ 
+n =          0, t = .000
+n =          1, t = .628
+n =          2, t = 1.257
+n =          3, t = 1.885
+n =          4, t = 2.513
+n =          5, t = 3.142
+n =          6, t = 3.770
+n =          7, t = 4.398
+n =          8, t = 5.027
+n =          9, t = 5.655
+n =         10, t = 6.283
+n =         11, t = 6.912
+n =         12, t = 7.540
+n =         13, t = 8.168
+n =         14, t = 8.796
+n =         15, t = 9.425
+n =         16, t = 10.053
+n =         17, t = 10.681
+n =         18, t = 11.310
+n =         19, t = 11.938
+n =         20, t = 12.566
+n =         21, t = 13.195
+n =         22, t = 13.823
+n =         23, t = 14.451
+n =         24, t = 15.080
+n =         25, t = 15.708
+n =         26, t = 16.336
+n =         27, t = 16.965
+n =         28, t = 17.593
+n =         29, t = 18.221
+n =         30, t = 18.850
+n =         31, t = 19.478
+n =         32, t = 20.106
+n =         33, t = 20.735
+n =         34, t = 21.363
+n =         35, t = 21.991
+n =         36, t = 22.619
+n =         37, t = 23.248
+n =         38, t = 23.876
+n =         39, t = 24.504
+n =         40, t = 25.133
+n =         41, t = 25.761
+n =         42, t = 26.389
+n =         43, t = 27.018
+n =         44, t = 27.646
+n =         45, t = 28.274
+n =         46, t = 28.903
+n =         47, t = 29.531
+n =         48, t = 30.159
+n =         49, t = 30.788
+n =         50, t = 31.416
+n =         51, t = 32.044
+n =         52, t = 32.673
+n =         53, t = 33.301
+n =         54, t = 33.929
+n =         55, t = 34.558
+n =         56, t = 35.186
+n =         57, t = 35.814
+n =         58, t = 36.442
+n =         59, t = 37.071
+n =         60, t = 37.699
+n =         61, t = 38.327
+n =         62, t = 38.956
+n =         63, t = 39.584
+n =         64, t = 40.212
+n =         65, t = 40.841
+n =         66, t = 41.469
+n =         67, t = 42.097
+n =         68, t = 42.726
+n =         69, t = 43.354
+n =         70, t = 43.982
+n =         71, t = 44.611
+n =         72, t = 45.239
+n =         73, t = 45.867
+n =         74, t = 46.496
+n =         75, t = 47.124
+n =         76, t = 47.752
+n =         77, t = 48.381
+n =         78, t = 49.009
+n =         79, t = 49.637
+n =         80, t = 50.265
+n =         81, t = 50.894
+n =         82, t = 51.522
+n =         83, t = 52.150
+n =         84, t = 52.779
+n =         85, t = 53.407
+n =         86, t = 54.035
+n =         87, t = 54.664
+n =         88, t = 55.292
+n =         89, t = 55.920
+n =         90, t = 56.549
+n =         91, t = 57.177
+n =         92, t = 57.805
+n =         93, t = 58.434
+n =         94, t = 59.062
+n =         95, t = 59.690
+n =         96, t = 60.319
+n =         97, t = 60.947
+n =         98, t = 61.575
+n =         99, t = 62.204
+ 
+  Simulation completed.
+ 
+ 
+ Osiris run completed normally
