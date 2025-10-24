@@ -1,0 +1,1141 @@
+
+The following have been reloaded with a version change:
+  1) GCC/13.3.0 => GCC/11.3.0
+  2) GCCcore/13.3.0 => GCCcore/11.3.0
+  3) OpenMPI/5.0.3-GCC-13.3.0 => OpenMPI/4.1.4-GCC-11.3.0
+  4) PMIx/5.0.2-GCCcore-13.3.0 => PMIx/4.1.2-GCCcore-11.3.0
+  5) UCC/1.3.0-GCCcore-13.3.0 => UCC/1.0.0-GCCcore-11.3.0
+  6) UCX/1.16.0-GCCcore-13.3.0 => UCX/1.12.1-GCCcore-11.3.0
+  7) XZ/5.4.5-GCCcore-13.3.0 => XZ/5.2.5-GCCcore-11.3.0
+  8) binutils/2.42-GCCcore-13.3.0 => binutils/2.38-GCCcore-11.3.0
+  9) hwloc/2.10.0-GCCcore-13.3.0 => hwloc/2.7.1-GCCcore-11.3.0
+ 10) libevent/2.1.12-GCCcore-13.3.0 => libevent/2.1.12-GCCcore-11.3.0
+ 11) libfabric/1.21.0-GCCcore-13.3.0 => libfabric/1.15.1-GCCcore-11.3.0
+ 12) libpciaccess/0.18.1-GCCcore-13.3.0 => libpciaccess/0.16-GCCcore-11.3.0
+ 13) libxml2/2.12.7-GCCcore-13.3.0 => libxml2/2.9.13-GCCcore-11.3.0
+ 14) numactl/2.0.18-GCCcore-13.3.0 => numactl/2.0.14-GCCcore-11.3.0
+ 15) zlib/1.3.1-GCCcore-13.3.0 => zlib/1.2.12-GCCcore-11.3.0
+
+
+The following have been reloaded with a version change:
+  1) GCC/11.3.0 => GCC/14.3.0
+  2) GCCcore/11.3.0 => GCCcore/14.3.0
+  3) binutils/2.38-GCCcore-11.3.0 => binutils/2.44-GCCcore-14.3.0
+  4) zlib/1.2.12-GCCcore-11.3.0 => zlib/1.3.1-GCCcore-14.3.0
+
+ Osiris running on host cna0036.deucalion.macc.fccn.pt
+ Current working directory = /home/jcandido/Decks/weibelTestsFinal/OriginalParams_FinalV/GcaCorr/GcaCorr_0_1
+ Timer resolution is    9.9999999999999995E-007  seconds
+ 
+ ***************************************************************
+ *                     Using Fortran version                   *
+ ***************************************************************
+ 
+ Software revision: 4.4.4-443-g4f64396
+ 
+ 
+ Reading input file, full name: GcaCorr.in
+ 
+ Reading global simulation options... 
+ Reading parallel node configuration... 
+ Reading grid configuration...
+ cartesian coordinates
+ Reading tstep configuration... 
+ Reading restart configuration... 
+ Reading g_space configuration... 
+ Reading time configuration... 
+ Reading emf configuration... 
+  - no smoothing specified
+ Reading part configuration... 
+ - species (1) configuration...
+    Species name : test_electrons
+ Reading zpulses ... 
+ Reading current configuration...
+  - no diagnostics specified
+ Reading antenna configuration...
+  - no antenna array specified
+ 
+ Initializing simulation:
+  Setting up no_co
+  - Running on 1 processes
+  setting up topology
+  Setting up grid
+  - setting parallel grid boundaries...
+  Setting up random number seed
+  Setting up tstep
+  Setting up restart
+  Setting up g_space
+  Setting up time
+  Setting up boundary buffers
+  Setting up emf
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 620 in H5Fopen(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #001: H5VLcallback.c line 3501 in H5VL_file_open(): failed to iterate over available VOL connector plugins
+    major: Virtual Object Layer
+    minor: Iteration failed
+  #002: H5PLpath.c line 578 in H5PL__path_table_iterate(): can't iterate over plugins in plugin path '(null)'
+    major: Plugin for dynamically loaded library
+    minor: Iteration failed
+  #003: H5PLpath.c line 620 in H5PL__path_table_iterate_process_path(): can't open directory: /usr/local/hdf5/lib/plugin
+    major: Plugin for dynamically loaded library
+    minor: Can't open directory or file
+  #004: H5VLcallback.c line 3351 in H5VL__file_open(): open failed
+    major: Virtual Object Layer
+    minor: Can't open object
+  #005: H5VLnative_file.c line 97 in H5VL__native_file_open(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #006: H5Fint.c line 1834 in H5F_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/b1/b1-000055.h5', tent_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+  #007: H5FD.c line 723 in H5FD_open(): open failed
+    major: Virtual File Layer
+    minor: Unable to initialize object
+  #008: H5FDsec2.c line 352 in H5FD__sec2_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/b1/b1-000055.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5G.c line 502 in H5Gopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 276 in H5Dopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 449 in H5Aopen(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  #001: H5VLint.c line 1749 in H5VL_vol_object(): invalid identifier type to function
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 698 in H5Aread(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 449 in H5Aopen(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  #001: H5VLint.c line 1749 in H5VL_vol_object(): invalid identifier type to function
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 698 in H5Aread(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 1626 in H5Aclose(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5G.c line 731 in H5Gclose(): not a group ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 707 in H5Fclose(): not a file ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 356 in H5Dget_space(): invalid dataset identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+ Reading external fld - no interpolation
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5Dio.c line 168 in H5Dread(): dset_id is not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 491 in H5Sclose(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 320 in H5Dclose(): not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 620 in H5Fopen(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #001: H5VLcallback.c line 3501 in H5VL_file_open(): failed to iterate over available VOL connector plugins
+    major: Virtual Object Layer
+    minor: Iteration failed
+  #002: H5PLpath.c line 578 in H5PL__path_table_iterate(): can't iterate over plugins in plugin path '(null)'
+    major: Plugin for dynamically loaded library
+    minor: Iteration failed
+  #003: H5PLpath.c line 620 in H5PL__path_table_iterate_process_path(): can't open directory: /usr/local/hdf5/lib/plugin
+    major: Plugin for dynamically loaded library
+    minor: Can't open directory or file
+  #004: H5VLcallback.c line 3351 in H5VL__file_open(): open failed
+    major: Virtual Object Layer
+    minor: Can't open object
+  #005: H5VLnative_file.c line 97 in H5VL__native_file_open(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #006: H5Fint.c line 1834 in H5F_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/e1/e1-000055.h5', tent_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+  #007: H5FD.c line 723 in H5FD_open(): open failed
+    major: Virtual File Layer
+    minor: Unable to initialize object
+  #008: H5FDsec2.c line 352 in H5FD__sec2_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/e1/e1-000055.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 276 in H5Dopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 707 in H5Fclose(): not a file ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 356 in H5Dget_space(): invalid dataset identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+ Reading external fld - no interpolation
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5Dio.c line 168 in H5Dread(): dset_id is not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 491 in H5Sclose(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 320 in H5Dclose(): not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 620 in H5Fopen(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #001: H5VLcallback.c line 3501 in H5VL_file_open(): failed to iterate over available VOL connector plugins
+    major: Virtual Object Layer
+    minor: Iteration failed
+  #002: H5PLpath.c line 578 in H5PL__path_table_iterate(): can't iterate over plugins in plugin path '(null)'
+    major: Plugin for dynamically loaded library
+    minor: Iteration failed
+  #003: H5PLpath.c line 620 in H5PL__path_table_iterate_process_path(): can't open directory: /usr/local/hdf5/lib/plugin
+    major: Plugin for dynamically loaded library
+    minor: Can't open directory or file
+  #004: H5VLcallback.c line 3351 in H5VL__file_open(): open failed
+    major: Virtual Object Layer
+    minor: Can't open object
+  #005: H5VLnative_file.c line 97 in H5VL__native_file_open(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #006: H5Fint.c line 1834 in H5F_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/b2/b2-000055.h5', tent_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+  #007: H5FD.c line 723 in H5FD_open(): open failed
+    major: Virtual File Layer
+    minor: Unable to initialize object
+  #008: H5FDsec2.c line 352 in H5FD__sec2_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/b2/b2-000055.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5G.c line 502 in H5Gopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 276 in H5Dopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 449 in H5Aopen(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  #001: H5VLint.c line 1749 in H5VL_vol_object(): invalid identifier type to function
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 698 in H5Aread(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 449 in H5Aopen(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  #001: H5VLint.c line 1749 in H5VL_vol_object(): invalid identifier type to function
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 698 in H5Aread(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 1626 in H5Aclose(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5G.c line 731 in H5Gclose(): not a group ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 707 in H5Fclose(): not a file ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 356 in H5Dget_space(): invalid dataset identifier
+    major: Invalid arguments to routine
+ Reading external fld - no interpolation
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5Dio.c line 168 in H5Dread(): dset_id is not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 491 in H5Sclose(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 320 in H5Dclose(): not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 620 in H5Fopen(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #001: H5VLcallback.c line 3501 in H5VL_file_open(): failed to iterate over available VOL connector plugins
+    major: Virtual Object Layer
+    minor: Iteration failed
+  #002: H5PLpath.c line 578 in H5PL__path_table_iterate(): can't iterate over plugins in plugin path '(null)'
+    major: Plugin for dynamically loaded library
+    minor: Iteration failed
+  #003: H5PLpath.c line 620 in H5PL__path_table_iterate_process_path(): can't open directory: /usr/local/hdf5/lib/plugin
+    major: Plugin for dynamically loaded library
+    minor: Can't open directory or file
+  #004: H5VLcallback.c line 3351 in H5VL__file_open(): open failed
+    major: Virtual Object Layer
+    minor: Can't open object
+  #005: H5VLnative_file.c line 97 in H5VL__native_file_open(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #006: H5Fint.c line 1834 in H5F_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/e2/e2-000055.h5', tent_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+  #007: H5FD.c line 723 in H5FD_open(): open failed
+    major: Virtual File Layer
+    minor: Unable to initialize object
+  #008: H5FDsec2.c line 352 in H5FD__sec2_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/e2/e2-000055.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 276 in H5Dopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 707 in H5Fclose(): not a file ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 356 in H5Dget_space(): invalid dataset identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+ Reading external fld - no interpolation
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5Dio.c line 168 in H5Dread(): dset_id is not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 491 in H5Sclose(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 320 in H5Dclose(): not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 620 in H5Fopen(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #001: H5VLcallback.c line 3501 in H5VL_file_open(): failed to iterate over available VOL connector plugins
+    major: Virtual Object Layer
+    minor: Iteration failed
+  #002: H5PLpath.c line 578 in H5PL__path_table_iterate(): can't iterate over plugins in plugin path '(null)'
+    major: Plugin for dynamically loaded library
+    minor: Iteration failed
+  #003: H5PLpath.c line 620 in H5PL__path_table_iterate_process_path(): can't open directory: /usr/local/hdf5/lib/plugin
+    major: Plugin for dynamically loaded library
+    minor: Can't open directory or file
+  #004: H5VLcallback.c line 3351 in H5VL__file_open(): open failed
+    major: Virtual Object Layer
+    minor: Can't open object
+  #005: H5VLnative_file.c line 97 in H5VL__native_file_open(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #006: H5Fint.c line 1834 in H5F_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/b3/b3-000055.h5', tent_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+  #007: H5FD.c line 723 in H5FD_open(): open failed
+    major: Virtual File Layer
+    minor: Unable to initialize object
+  #008: H5FDsec2.c line 352 in H5FD__sec2_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/b3/b3-000055.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5G.c line 502 in H5Gopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 276 in H5Dopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 449 in H5Aopen(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  #001: H5VLint.c line 1749 in H5VL_vol_object(): invalid identifier type to function
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 698 in H5Aread(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 449 in H5Aopen(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  #001: H5VLint.c line 1749 in H5VL_vol_object(): invalid identifier type to function
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 698 in H5Aread(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5A.c line 1626 in H5Aclose(): not an attribute
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5G.c line 731 in H5Gclose(): not a group ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 707 in H5Fclose(): not a file ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 356 in H5Dget_space(): invalid dataset identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+ Reading external fld - no interpolation
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5Dio.c line 168 in H5Dread(): dset_id is not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 491 in H5Sclose(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 320 in H5Dclose(): not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 620 in H5Fopen(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #001: H5VLcallback.c line 3501 in H5VL_file_open(): failed to iterate over available VOL connector plugins
+    major: Virtual Object Layer
+    minor: Iteration failed
+  #002: H5PLpath.c line 578 in H5PL__path_table_iterate(): can't iterate over plugins in plugin path '(null)'
+    major: Plugin for dynamically loaded library
+    minor: Iteration failed
+  #003: H5PLpath.c line 620 in H5PL__path_table_iterate_process_path(): can't open directory: /usr/local/hdf5/lib/plugin
+    major: Plugin for dynamically loaded library
+    minor: Can't open directory or file
+  #004: H5VLcallback.c line 3351 in H5VL__file_open(): open failed
+    major: Virtual Object Layer
+    minor: Can't open object
+  #005: H5VLnative_file.c line 97 in H5VL__native_file_open(): unable to open file
+    major: File accessibility
+    minor: Unable to open file
+  #006: H5Fint.c line 1834 in H5F_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/e3/e3-000055.h5', tent_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+  #007: H5FD.c line 723 in H5FD_open(): open failed
+    major: Virtual File Layer
+    minor: Unable to initialize object
+  #008: H5FDsec2.c line 352 in H5FD__sec2_open(): unable to open file: name = '../../../weibelBG_B0_1/MS/FLD/e3/e3-000055.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0
+    major: File accessibility
+    minor: Unable to open file
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 276 in H5Dopen2(): invalid location identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5F.c line 707 in H5Fclose(): not a file ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 356 in H5Dget_space(): invalid dataset identifier
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+ Reading external fld - no interpolation
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 889 in H5Sget_simple_extent_ndims(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5Dio.c line 168 in H5Dread(): dset_id is not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5S.c line 491 in H5Sclose(): not a dataspace
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: H5D.c line 320 in H5Dclose(): not a dataset ID
+    major: Invalid arguments to routine
+    minor: Inappropriate type
+  - setting up external fields...
+  Setting up current
+  Setting up zpulses
+  Setting up particles
+  Setting up antenna array
+  Setting up diagnostics utilities
+ 
+ Initialization complete!
+  
+ Numerical precision :
+ - Fields    : double precision
+ - Particles : double precision
+  
+ Global random number generator
+  - Algorithm: Grid o' Mersenne Twister
+  
+ Field Solver:
+ - Yee solver
+ - Guard Cells:
+     x1 : [2, 3]
+     x2 : [2, 3]
+     x3 : [2, 3]
+ - Using static external field source
+ - No field smoothing
+  
+ - EM Field Boundary condtions:
+     x1 : [Periodic, Periodic]
+     x2 : [Periodic, Periodic]
+     x3 : [Periodic, Periodic]
+  
+Particles:
+- Number of species: 1
+- Quadratic (2nd order) interpolation
+- Using staggered Yee grid values for interpolation
+  
+ test_electrons :
+ - Boris pusher with Gca correction
+  
+ Electrical current :
+ - Using smoothing
+Dynamic memory status:
+- Number of allocated memory blocks: 2052
+Total Allocated Memory: 218.3 MB
+ 
+ Starting main simulation loop:
+ 
+n =          0, t = .000
+ dudt_gca_corr: first step, initializing
+n =          1, t = .063
+n =          2, t = .126
+n =          3, t = .188
+n =          4, t = .251
+n =          5, t = .314
+n =          6, t = .377
+n =          7, t = .440
+n =          8, t = .503
+n =          9, t = .565
+n =         10, t = .628
+n =         11, t = .691
+n =         12, t = .754
+n =         13, t = .817
+n =         14, t = .880
+n =         15, t = .942
+n =         16, t = 1.005
+n =         17, t = 1.068
+n =         18, t = 1.131
+n =         19, t = 1.194
+n =         20, t = 1.257
+n =         21, t = 1.319
+n =         22, t = 1.382
+n =         23, t = 1.445
+n =         24, t = 1.508
+n =         25, t = 1.571
+n =         26, t = 1.634
+n =         27, t = 1.696
+n =         28, t = 1.759
+n =         29, t = 1.822
+n =         30, t = 1.885
+n =         31, t = 1.948
+n =         32, t = 2.011
+n =         33, t = 2.073
+n =         34, t = 2.136
+n =         35, t = 2.199
+n =         36, t = 2.262
+n =         37, t = 2.325
+n =         38, t = 2.388
+n =         39, t = 2.450
+n =         40, t = 2.513
+n =         41, t = 2.576
+n =         42, t = 2.639
+n =         43, t = 2.702
+n =         44, t = 2.765
+n =         45, t = 2.827
+n =         46, t = 2.890
+n =         47, t = 2.953
+n =         48, t = 3.016
+n =         49, t = 3.079
+n =         50, t = 3.142
+n =         51, t = 3.204
+n =         52, t = 3.267
+n =         53, t = 3.330
+n =         54, t = 3.393
+n =         55, t = 3.456
+n =         56, t = 3.519
+n =         57, t = 3.581
+n =         58, t = 3.644
+n =         59, t = 3.707
+n =         60, t = 3.770
+n =         61, t = 3.833
+n =         62, t = 3.896
+n =         63, t = 3.958
+n =         64, t = 4.021
+n =         65, t = 4.084
+n =         66, t = 4.147
+n =         67, t = 4.210
+n =         68, t = 4.273
+n =         69, t = 4.335
+n =         70, t = 4.398
+n =         71, t = 4.461
+n =         72, t = 4.524
+n =         73, t = 4.587
+n =         74, t = 4.650
+n =         75, t = 4.712
+n =         76, t = 4.775
+n =         77, t = 4.838
+n =         78, t = 4.901
+n =         79, t = 4.964
+n =         80, t = 5.027
+n =         81, t = 5.089
+n =         82, t = 5.152
+n =         83, t = 5.215
+n =         84, t = 5.278
+n =         85, t = 5.341
+n =         86, t = 5.404
+n =         87, t = 5.466
+n =         88, t = 5.529
+n =         89, t = 5.592
+n =         90, t = 5.655
+n =         91, t = 5.718
+n =         92, t = 5.781
+n =         93, t = 5.843
+n =         94, t = 5.906
+n =         95, t = 5.969
+n =         96, t = 6.032
+n =         97, t = 6.095
+n =         98, t = 6.158
+n =         99, t = 6.220
+n =        100, t = 6.283
+n =        101, t = 6.346
+n =        102, t = 6.409
+n =        103, t = 6.472
+n =        104, t = 6.535
+n =        105, t = 6.597
+n =        106, t = 6.660
+n =        107, t = 6.723
+n =        108, t = 6.786
+n =        109, t = 6.849
+n =        110, t = 6.912
+n =        111, t = 6.974
+n =        112, t = 7.037
+n =        113, t = 7.100
+n =        114, t = 7.163
+n =        115, t = 7.226
+n =        116, t = 7.288
+n =        117, t = 7.351
+n =        118, t = 7.414
+n =        119, t = 7.477
+n =        120, t = 7.540
+n =        121, t = 7.603
+n =        122, t = 7.665
+n =        123, t = 7.728
+n =        124, t = 7.791
+n =        125, t = 7.854
+n =        126, t = 7.917
+n =        127, t = 7.980
+n =        128, t = 8.042
+n =        129, t = 8.105
+n =        130, t = 8.168
+n =        131, t = 8.231
+n =        132, t = 8.294
+n =        133, t = 8.357
+n =        134, t = 8.419
+n =        135, t = 8.482
+n =        136, t = 8.545
+n =        137, t = 8.608
+n =        138, t = 8.671
+n =        139, t = 8.734
+n =        140, t = 8.796
+n =        141, t = 8.859
+n =        142, t = 8.922
+n =        143, t = 8.985
+n =        144, t = 9.048
+n =        145, t = 9.111
+n =        146, t = 9.173
+n =        147, t = 9.236
+n =        148, t = 9.299
+n =        149, t = 9.362
+n =        150, t = 9.425
+n =        151, t = 9.488
+n =        152, t = 9.550
+n =        153, t = 9.613
+n =        154, t = 9.676
+n =        155, t = 9.739
+n =        156, t = 9.802
+n =        157, t = 9.865
+n =        158, t = 9.927
+n =        159, t = 9.990
+n =        160, t = 10.053
+n =        161, t = 10.116
+n =        162, t = 10.179
+n =        163, t = 10.242
+n =        164, t = 10.304
+n =        165, t = 10.367
+n =        166, t = 10.430
+n =        167, t = 10.493
+n =        168, t = 10.556
+n =        169, t = 10.619
+n =        170, t = 10.681
+n =        171, t = 10.744
+n =        172, t = 10.807
+n =        173, t = 10.870
+n =        174, t = 10.933
+n =        175, t = 10.996
+n =        176, t = 11.058
+n =        177, t = 11.121
+n =        178, t = 11.184
+n =        179, t = 11.247
+n =        180, t = 11.310
+n =        181, t = 11.373
+n =        182, t = 11.435
+n =        183, t = 11.498
+n =        184, t = 11.561
+n =        185, t = 11.624
+n =        186, t = 11.687
+n =        187, t = 11.750
+n =        188, t = 11.812
+n =        189, t = 11.875
+n =        190, t = 11.938
+n =        191, t = 12.001
+n =        192, t = 12.064
+n =        193, t = 12.127
+n =        194, t = 12.189
+n =        195, t = 12.252
+n =        196, t = 12.315
+n =        197, t = 12.378
+n =        198, t = 12.441
+n =        199, t = 12.504
+n =        200, t = 12.566
+n =        201, t = 12.629
+n =        202, t = 12.692
+n =        203, t = 12.755
+n =        204, t = 12.818
+n =        205, t = 12.881
+n =        206, t = 12.943
+n =        207, t = 13.006
+n =        208, t = 13.069
+n =        209, t = 13.132
+n =        210, t = 13.195
+n =        211, t = 13.258
+n =        212, t = 13.320
+n =        213, t = 13.383
+n =        214, t = 13.446
+n =        215, t = 13.509
+n =        216, t = 13.572
+n =        217, t = 13.635
+n =        218, t = 13.697
+n =        219, t = 13.760
+n =        220, t = 13.823
+n =        221, t = 13.886
+n =        222, t = 13.949
+n =        223, t = 14.012
+n =        224, t = 14.074
+n =        225, t = 14.137
+n =        226, t = 14.200
+n =        227, t = 14.263
+n =        228, t = 14.326
+n =        229, t = 14.388
+n =        230, t = 14.451
+n =        231, t = 14.514
+n =        232, t = 14.577
+n =        233, t = 14.640
+n =        234, t = 14.703
+n =        235, t = 14.765
+n =        236, t = 14.828
+n =        237, t = 14.891
+n =        238, t = 14.954
+n =        239, t = 15.017
+n =        240, t = 15.080
+n =        241, t = 15.142
+n =        242, t = 15.205
+n =        243, t = 15.268
+n =        244, t = 15.331
+n =        245, t = 15.394
+n =        246, t = 15.457
+n =        247, t = 15.519
+n =        248, t = 15.582
+n =        249, t = 15.645
+n =        250, t = 15.708
+n =        251, t = 15.771
+n =        252, t = 15.834
+n =        253, t = 15.896
+n =        254, t = 15.959
+n =        255, t = 16.022
+n =        256, t = 16.085
+n =        257, t = 16.148
+n =        258, t = 16.211
+n =        259, t = 16.273
+n =        260, t = 16.336
+n =        261, t = 16.399
+n =        262, t = 16.462
+n =        263, t = 16.525
+n =        264, t = 16.588
+n =        265, t = 16.650
+n =        266, t = 16.713
+n =        267, t = 16.776
+n =        268, t = 16.839
+n =        269, t = 16.902
+n =        270, t = 16.965
+n =        271, t = 17.027
+n =        272, t = 17.090
+n =        273, t = 17.153
+n =        274, t = 17.216
+n =        275, t = 17.279
+n =        276, t = 17.342
+n =        277, t = 17.404
+n =        278, t = 17.467
+n =        279, t = 17.530
+n =        280, t = 17.593
+n =        281, t = 17.656
+n =        282, t = 17.719
+n =        283, t = 17.781
+n =        284, t = 17.844
+n =        285, t = 17.907
+n =        286, t = 17.970
+n =        287, t = 18.033
+n =        288, t = 18.096
+n =        289, t = 18.158
+n =        290, t = 18.221
+n =        291, t = 18.284
+n =        292, t = 18.347
+n =        293, t = 18.410
+n =        294, t = 18.473
+n =        295, t = 18.535
+n =        296, t = 18.598
+n =        297, t = 18.661
+n =        298, t = 18.724
+n =        299, t = 18.787
+n =        300, t = 18.850
+n =        301, t = 18.912
+n =        302, t = 18.975
+n =        303, t = 19.038
+n =        304, t = 19.101
+n =        305, t = 19.164
+n =        306, t = 19.227
+n =        307, t = 19.289
+n =        308, t = 19.352
+n =        309, t = 19.415
+n =        310, t = 19.478
+n =        311, t = 19.541
+n =        312, t = 19.604
+n =        313, t = 19.666
+n =        314, t = 19.729
+n =        315, t = 19.792
+n =        316, t = 19.855
+n =        317, t = 19.918
+n =        318, t = 19.981
+n =        319, t = 20.043
+n =        320, t = 20.106
+n =        321, t = 20.169
+n =        322, t = 20.232
+n =        323, t = 20.295
+n =        324, t = 20.358
+n =        325, t = 20.420
+n =        326, t = 20.483
+n =        327, t = 20.546
+n =        328, t = 20.609
+n =        329, t = 20.672
+n =        330, t = 20.735
+n =        331, t = 20.797
+n =        332, t = 20.860
+n =        333, t = 20.923
+n =        334, t = 20.986
+n =        335, t = 21.049
+n =        336, t = 21.112
+n =        337, t = 21.174
+n =        338, t = 21.237
+n =        339, t = 21.300
+n =        340, t = 21.363
+n =        341, t = 21.426
+n =        342, t = 21.488
+n =        343, t = 21.551
+n =        344, t = 21.614
+n =        345, t = 21.677
+n =        346, t = 21.740
+n =        347, t = 21.803
+n =        348, t = 21.865
+n =        349, t = 21.928
+n =        350, t = 21.991
+n =        351, t = 22.054
+n =        352, t = 22.117
+n =        353, t = 22.180
+n =        354, t = 22.242
+n =        355, t = 22.305
+n =        356, t = 22.368
+n =        357, t = 22.431
+n =        358, t = 22.494
+n =        359, t = 22.557
+n =        360, t = 22.619
+n =        361, t = 22.682
+n =        362, t = 22.745
+n =        363, t = 22.808
+n =        364, t = 22.871
+n =        365, t = 22.934
+n =        366, t = 22.996
+n =        367, t = 23.059
+n =        368, t = 23.122
+n =        369, t = 23.185
+n =        370, t = 23.248
+n =        371, t = 23.311
+n =        372, t = 23.373
+n =        373, t = 23.436
+n =        374, t = 23.499
+n =        375, t = 23.562
+n =        376, t = 23.625
+n =        377, t = 23.688
+n =        378, t = 23.750
+n =        379, t = 23.813
+n =        380, t = 23.876
+n =        381, t = 23.939
+n =        382, t = 24.002
+n =        383, t = 24.065
+n =        384, t = 24.127
+n =        385, t = 24.190
+n =        386, t = 24.253
+n =        387, t = 24.316
+n =        388, t = 24.379
+n =        389, t = 24.442
+n =        390, t = 24.504
+n =        391, t = 24.567
+n =        392, t = 24.630
+n =        393, t = 24.693
+n =        394, t = 24.756
+n =        395, t = 24.819
+n =        396, t = 24.881
+n =        397, t = 24.944
+n =        398, t = 25.007
+n =        399, t = 25.070
+n =        400, t = 25.133
+n =        401, t = 25.196
+n =        402, t = 25.258
+n =        403, t = 25.321
+n =        404, t = 25.384
+n =        405, t = 25.447
+n =        406, t = 25.510
+n =        407, t = 25.573
+n =        408, t = 25.635
+n =        409, t = 25.698
+n =        410, t = 25.761
+n =        411, t = 25.824
+n =        412, t = 25.887
+n =        413, t = 25.950
+n =        414, t = 26.012
+n =        415, t = 26.075
+n =        416, t = 26.138
+n =        417, t = 26.201
+n =        418, t = 26.264
+n =        419, t = 26.327
+n =        420, t = 26.389
+n =        421, t = 26.452
+n =        422, t = 26.515
+n =        423, t = 26.578
+n =        424, t = 26.641
+n =        425, t = 26.704
+n =        426, t = 26.766
+n =        427, t = 26.829
+n =        428, t = 26.892
+n =        429, t = 26.955
+n =        430, t = 27.018
+n =        431, t = 27.081
+n =        432, t = 27.143
+n =        433, t = 27.206
+n =        434, t = 27.269
+n =        435, t = 27.332
+n =        436, t = 27.395
+n =        437, t = 27.458
+n =        438, t = 27.520
+n =        439, t = 27.583
+n =        440, t = 27.646
+n =        441, t = 27.709
+n =        442, t = 27.772
+n =        443, t = 27.835
+n =        444, t = 27.897
+n =        445, t = 27.960
+n =        446, t = 28.023
+n =        447, t = 28.086
+n =        448, t = 28.149
+n =        449, t = 28.212
+n =        450, t = 28.274
+n =        451, t = 28.337
+n =        452, t = 28.400
+n =        453, t = 28.463
+n =        454, t = 28.526
+n =        455, t = 28.588
+n =        456, t = 28.651
+n =        457, t = 28.714
+n =        458, t = 28.777
+n =        459, t = 28.840
+n =        460, t = 28.903
+n =        461, t = 28.965
+n =        462, t = 29.028
+n =        463, t = 29.091
+n =        464, t = 29.154
+n =        465, t = 29.217
+n =        466, t = 29.280
+n =        467, t = 29.342
+n =        468, t = 29.405
+n =        469, t = 29.468
+n =        470, t = 29.531
+n =        471, t = 29.594
+n =        472, t = 29.657
+n =        473, t = 29.719
+n =        474, t = 29.782
+n =        475, t = 29.845
+n =        476, t = 29.908
+n =        477, t = 29.971
+n =        478, t = 30.034
+n =        479, t = 30.096
+n =        480, t = 30.159
+n =        481, t = 30.222
+n =        482, t = 30.285
+n =        483, t = 30.348
+n =        484, t = 30.411
+n =        485, t = 30.473
+n =        486, t = 30.536
+n =        487, t = 30.599
+n =        488, t = 30.662
+n =        489, t = 30.725
+n =        490, t = 30.788
+n =        491, t = 30.850
+n =        492, t = 30.913
+n =        493, t = 30.976
+n =        494, t = 31.039
+n =        495, t = 31.102
+n =        496, t = 31.165
+n =        497, t = 31.227
+n =        498, t = 31.290
+n =        499, t = 31.353
+n =        500, t = 31.416
+n =        501, t = 31.479
+n =        502, t = 31.542
+n =        503, t = 31.604
+n =        504, t = 31.667
+n =        505, t = 31.730
+n =        506, t = 31.793
+n =        507, t = 31.856
+n =        508, t = 31.919
+n =        509, t = 31.981
+n =        510, t = 32.044
+n =        511, t = 32.107
+n =        512, t = 32.170
+n =        513, t = 32.233
+n =        514, t = 32.296
+n =        515, t = 32.358
+n =        516, t = 32.421
+n =        517, t = 32.484
+n =        518, t = 32.547
+n =        519, t = 32.610
+n =        520, t = 32.673
+n =        521, t = 32.735
+n =        522, t = 32.798
+n =        523, t = 32.861
+n =        524, t = 32.924
+n =        525, t = 32.987
+n =        526, t = 33.050
+n =        527, t = 33.112
+n =        528, t = 33.175
+n =        529, t = 33.238
+n =        530, t = 33.301
+n =        531, t = 33.364
+n =        532, t = 33.427
+n =        533, t = 33.489
+n =        534, t = 33.552
+n =        535, t = 33.615
+n =        536, t = 33.678
+n =        537, t = 33.741
+n =        538, t = 33.804
+n =        539, t = 33.866
+n =        540, t = 33.929
+n =        541, t = 33.992
+n =        542, t = 34.055
+n =        543, t = 34.118
+n =        544, t = 34.181
+n =        545, t = 34.243
+n =        546, t = 34.306
+n =        547, t = 34.369
+n =        548, t = 34.432
+n =        549, t = 34.495
+n =        550, t = 34.558
+n =        551, t = 34.620
+n =        552, t = 34.683
+n =        553, t = 34.746
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 604538 ON cna0036 CANCELLED AT 2025-10-23T21:54:44 ***

@@ -1,6 +1,6 @@
 build_info = {
-  "version": "4.4.4-416-g79a7176-dirty",
-  "branch": "disableSolver_inputField_gcaCorrCurv_gca",
+  "version": "4.4.4-446-gb1805d7-dirty",
+  "branch": "disableSolver_inputField_gca_gcaCorr",
   "dimensions": "3",
   "precision": "DOUBLE",
   "build_type": "production",
@@ -8,7 +8,7 @@ build_info = {
   "build_tool": "make",
   "build_flags": {
     "FPP"  :"gcc -C -E -x assembler-with-cpp -D_OPENMP -DHDF5",
-    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-416-g79a7176-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-446-gb1805d7-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DENABLE_RAD -DENABLE_TILES -DENABLE_PGC -DENABLE_QED -DENABLE_SHEAR -DENABLE_CYLMODES -DENABLE_QEDCYL -DENABLE_RADCYL -DENABLE_OVERDENSE -DENABLE_OVERDENSE_CYL -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL -DENABLE_GR",
     "F90"  :"gfortran -Wa,-q -cpp",
     "F90F" :"-pipe -ffree-line-length-none -fno-range-check --openmp -Ofast -march=native -I/home/exxxx5/openmpi/include -I/home/exxxx5/openmpi/lib -I/home/exxxx5/hdf5/include",
     "CF"   :"-Ofast -march=native -std=c99 -I/home/exxxx5/openmpi/include -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
@@ -17,10 +17,11 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         2170744590.,
+  "input_deck_crc":         4057299400.,
   "input_deck": """
 simulation 
 {
+  disableEmfAdvance = .True.,
   enforce_rng_constancy  = .true.,
 }
 
@@ -115,7 +116,7 @@ udist {
 profile
 {
   profile_type(1) = "math func",
-  math_func_expr = "if((x1<5.5)&&(x1>4.5)&&(x2<5.5)&&(x2>4.5)&&(x3<5.5)&&(x3>4.5), 1.d-11, 0.0)",
+  math_func_expr = "if((x1<5.5)&&(x1>4.5)&&(x2<5.5)&&(x2>4.5)&&(x3<5.5)&&(x3>4.5), 1, 0.0)",
   den_min = 1.d-12,
 }
 
