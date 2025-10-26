@@ -1,0 +1,149 @@
+
+The following have been reloaded with a version change:
+  1) GCC/13.3.0 => GCC/11.3.0
+  2) GCCcore/13.3.0 => GCCcore/11.3.0
+  3) OpenMPI/5.0.3-GCC-13.3.0 => OpenMPI/4.1.4-GCC-11.3.0
+  4) PMIx/5.0.2-GCCcore-13.3.0 => PMIx/4.1.2-GCCcore-11.3.0
+  5) UCC/1.3.0-GCCcore-13.3.0 => UCC/1.0.0-GCCcore-11.3.0
+  6) UCX/1.16.0-GCCcore-13.3.0 => UCX/1.12.1-GCCcore-11.3.0
+  7) XZ/5.4.5-GCCcore-13.3.0 => XZ/5.2.5-GCCcore-11.3.0
+  8) binutils/2.42-GCCcore-13.3.0 => binutils/2.38-GCCcore-11.3.0
+  9) hwloc/2.10.0-GCCcore-13.3.0 => hwloc/2.7.1-GCCcore-11.3.0
+ 10) libevent/2.1.12-GCCcore-13.3.0 => libevent/2.1.12-GCCcore-11.3.0
+ 11) libfabric/1.21.0-GCCcore-13.3.0 => libfabric/1.15.1-GCCcore-11.3.0
+ 12) libpciaccess/0.18.1-GCCcore-13.3.0 => libpciaccess/0.16-GCCcore-11.3.0
+ 13) libxml2/2.12.7-GCCcore-13.3.0 => libxml2/2.9.13-GCCcore-11.3.0
+ 14) numactl/2.0.18-GCCcore-13.3.0 => numactl/2.0.14-GCCcore-11.3.0
+ 15) zlib/1.3.1-GCCcore-13.3.0 => zlib/1.2.12-GCCcore-11.3.0
+
+
+The following have been reloaded with a version change:
+  1) GCC/11.3.0 => GCC/14.3.0
+  2) GCCcore/11.3.0 => GCCcore/14.3.0
+  3) binutils/2.38-GCCcore-11.3.0 => binutils/2.44-GCCcore-14.3.0
+  4) zlib/1.2.12-GCCcore-11.3.0 => zlib/1.3.1-GCCcore-14.3.0
+
+ Osiris running on host cna0078.deucalion.macc.fccn.pt
+ Current working directory = /home/jcandido/Decks/weibelTestsFinalV2/E0_01_FinalV/GcaCorr/dtw50
+ Timer resolution is    9.9999999999999995E-007  seconds
+ 
+ ***************************************************************
+ *                     Using Fortran version                   *
+ ***************************************************************
+ 
+ Software revision: 4.4.4-443-g4f64396
+ 
+ 
+ Reading input file, full name: GcaCorr.in
+ 
+ Reading global simulation options... 
+ Reading parallel node configuration... 
+ Reading grid configuration...
+ cartesian coordinates
+ Reading tstep configuration... 
+ Reading restart configuration... 
+ Reading g_space configuration... 
+ Reading time configuration... 
+ Reading emf configuration... 
+  - no smoothing specified
+ Reading part configuration... 
+ - species (1) configuration...
+    Species name : test_electrons
+ Reading zpulses ... 
+ Reading current configuration...
+  - no diagnostics specified
+ Reading antenna configuration...
+  - no antenna array specified
+ 
+ Initializing simulation:
+  Setting up no_co
+  - Running on 1 processes
+  setting up topology
+  Setting up grid
+  - setting parallel grid boundaries...
+  Setting up random number seed
+  Setting up tstep
+  Setting up restart
+  Setting up g_space
+  Setting up time
+  Setting up boundary buffers
+  Setting up emf
+ Reading external fld - no interpolation
+ Reading external fld - no interpolation
+ Reading external fld - no interpolation
+ Reading external fld - no interpolation
+ Reading external fld - no interpolation
+ Reading external fld - no interpolation
+  - setting up external fields...
+  Setting up current
+  Setting up zpulses
+  Setting up particles
+  Setting up antenna array
+  Setting up diagnostics utilities
+ 
+ Initialization complete!
+  
+ Numerical precision :
+ - Fields    : double precision
+ - Particles : double precision
+  
+ Global random number generator
+  - Algorithm: Grid o' Mersenne Twister
+  
+ Field Solver:
+ - Yee solver
+ - Guard Cells:
+     x1 : [2, 3]
+     x2 : [2, 3]
+     x3 : [2, 3]
+ - Using static external field source
+ - No field smoothing
+  
+ - EM Field Boundary condtions:
+     x1 : [Periodic, Periodic]
+     x2 : [Periodic, Periodic]
+     x3 : [Periodic, Periodic]
+  
+Particles:
+- Number of species: 1
+- Quadratic (2nd order) interpolation
+- Using staggered Yee grid values for interpolation
+  
+ test_electrons :
+ - Boris pusher with Gca correction
+  
+ Electrical current :
+ - Using smoothing
+Dynamic memory status:
+- Number of allocated memory blocks: 2052
+Total Allocated Memory: 217.2 MB
+ 
+ Starting main simulation loop:
+ 
+n =          0, t = .000
+ dudt_gca_corr: first step, initializing
+n =          1, t = 31.416
+n =          2, t = 62.832
+n =          3, t = 94.248
+n =          4, t = 125.664
+n =          5, t = 157.080
+n =          6, t = 188.496
+n =          7, t = 219.911
+n =          8, t = 251.327
+n =          9, t = 282.743
+n =         10, t = 314.159
+n =         11, t = 345.575
+n =         12, t = 376.991
+n =         13, t = 408.407
+n =         14, t = 439.823
+n =         15, t = 471.239
+n =         16, t = 502.655
+n =         17, t = 534.071
+n =         18, t = 565.487
+n =         19, t = 596.903
+n =         20, t = 628.319
+ 
+  Simulation completed.
+ 
+ 
+ Osiris run completed normally
