@@ -2,7 +2,7 @@
 #SBATCH --job-name=WeibelgcaCorrV5__1000
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
-#SBATCH --time=0-00:10:00
+#SBATCH --time=0-00:20:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 
