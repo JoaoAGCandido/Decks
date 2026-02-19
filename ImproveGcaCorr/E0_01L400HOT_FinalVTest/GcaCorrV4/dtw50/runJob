@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH --job-name=WeibelgcaCorrV4__50
+#SBATCH --account=f202500196cpcaa3a
+#SBATCH --partition=normal-arm
+#SBATCH --time=0-00:10:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
+
+set -euo pipefail
+
+module purge
+module load OpenMPI
+ml HDF5/1.12.2-gompi-2022a
+module load FFTW
+
+mkdir -p logs
+
+
+
+# ---- choose branch here ----
+BRANCH="gcaCorrV4"
+WTBASE="$HOME/osiris_worktrees"
+
+WORKTREE="$WTBASE/$BRANCH"
+
+
+
+# ---- executable + input ----
+EXE="osiris-3D-${BRANCH}.e"
+BIN="$WORKTREE/bin/$EXE"
+INPUT="GcaCorr.in"
+
+echo "Host:     $(hostname)"
+echo "Branch:   $BRANCH"
+echo "Worktree: $WORKTREE"
+echo "Binary:   $BIN"
+if [[ -L "$BIN" ]]; then
+  echo "Resolves: $(readlink -f "$BIN")"
+fi
+echo "Run dir:  $(pwd)"
+echo "Input:    $INPUT"
+
+[[ -d "$WORKTREE" ]] || { echo "ERROR: missing worktree: $WORKTREE"; exit 1; }
+[[ -x "$BIN" ]]      || { echo "ERROR: missing executable: $BIN (compile this worktree)"; exit 1; }
+[[ -f "$INPUT" ]]    || { echo "ERROR: missing input file in run directory: $INPUT"; exit 1; }
+
+srun "$BIN" "$INPUT"
