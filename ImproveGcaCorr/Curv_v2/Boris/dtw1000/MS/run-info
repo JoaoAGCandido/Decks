@@ -1,0 +1,156 @@
+build_info = {
+  "version": "4.4.4-443-g4f64396",
+  "branch": "deucalion_input_disable_gca_gcaCorr",
+  "dimensions": "3",
+  "precision": "DOUBLE",
+  "build_type": "production",
+  "system": "deucalion.arm",
+  "build_tool": "make",
+  "build_flags": {
+    "FPP"  :"gfortran -C -E -x assembler-with-cpp -DHDF5",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-443-g4f64396\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
+    "F90"  :"mpif90 -cpp",
+    "F90F" :"-pipe -ffree-line-length-none -fno-range-check -O2 -ftree-vectorize -march=native -fno-math-errno -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/include -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/include/ -I/eb/aarch64/software/FFTW/3.3.10-GCC-14.2.0/include",
+    "CF"   :"-Ofast -std=c99 -O2 -ftree-vectorize -march=native -fno-math-errno -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
+    "cc"   :"mpicc",
+    "LDF"  :"-lstdc++ -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/lib/ -lhdf5 -lhdf5_fortran -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/hwloc/2.7.1-GCCcore-11.3.0/lib -L/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/libevent/2.1.12-GCCcore-11.3.0/lib -Wl,-rpath -Wl,/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -Wl,-rpath -Wl,/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/hwloc/2.7.1-GCCcore-11.3.0/lib -Wl,-rpath -Wl,/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/libevent/2.1.12-GCCcore-11.3.0/lib -Wl,--enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -L/eb/aarch64/software/FFTW/3.3.10-GCC-14.2.0/lib -lfftw3",
+   }
+}
+run_info = {
+  "input_deck_crc":         3728932177.,
+  "input_deck": """
+simulation 
+{
+  enforce_rng_constancy  = .true.,
+  disableEmfAdvance = .True.,
+}
+
+node_conf
+{
+  node_number(1:3) =  2, 2, 2,
+  if_periodic(1:3) =  .true., .true., .true., 
+}
+
+!----------spatial grid----------
+grid
+{
+  nx_p(1:3) =  80, 80, 80,
+  coordinates = "cartesian",
+}
+
+!----------time step and global data dump timestep number----------
+time_step
+{
+  dt     =   6.283185307179586476925286766559,
+  ndump  =    1,
+}
+
+!----------restart information----------
+restart
+{
+  ndump_fac = 0,
+  if_restart = .false.,
+}
+
+!----------spatial limits of the simulations----------
+space
+{
+  xmin(1:3) =  -5., -5., -5.,
+  xmax(1:3) =   5.,  5.,  5.,
+  if_move(1:3) = .false., .false., .false.,
+}
+
+!----------time limits ----------
+time
+{
+  tmin = 0.0d0, tmax  = 12566.370614359172953850573533118,
+}
+
+!----------field solver set up----------
+el_mag_fld
+{
+  ext_fld = "static",
+  type_init_b(1:3) = "math func", "math func", "math func",
+  init_b_mfunc(1) = "- 1000.0 * x2 / sqrt(x1*x1 + x2*x2)",
+  init_b_mfunc(2) = "1000.0 * x1 / sqrt(x1*x1 + x2*x2)",
+  init_b_mfunc(3) = "0.0",
+
+  type_init_e(1:3) = "math func", "math func", "math func",
+  init_e_mfunc(1) = "0.0",
+  init_e_mfunc(2) = "0.0",
+  init_e_mfunc(3) = "0.0",
+}
+
+!----------boundary conditions for em-fields ----------
+emf_bound
+{
+  type(1:2,1) =   "open", "open",
+  type(1:2,2) =   "open", "open",
+  type(1:2,3) =   "open", "open", 
+}
+
+!----------diagnostic for electromagnetic fields---------- 
+diag_emf 
+{
+
+}
+
+!----------number of particle species----------
+particles
+{
+  interpolation = "quadratic",
+  num_species = 1,
+}
+
+!----------information for test species----------
+species
+{
+  name = "test_electrons",
+  num_par_max = 100,
+  rqm = -1.0,
+  num_par_x(1:3) = 1, 1, 1,
+  add_tag = .true.,
+}
+
+!----------inital proper velocities----------
+udist {
+  ufl(1:3)=  0.05d0 , -0.05d0 , 0.0001d0 ,
+}
+
+!----------density profile for this species----------
+profile
+{
+  profile_type(1) = "math func",
+  math_func_expr = "if((x1<3.1)&&(x1>2.9)&&(x2<3.1)&&(x2>2.9)&&(x3<3.1)&&(x3>2.9), 1.0, 0.0)",
+  den_min = 1.d-12,
+}
+
+!----------boundary conditions for this species----------
+spe_bound
+{
+type(1:2,1) =    "open",    "open",
+type(1:2,2) =    "open",    "open",
+type(1:2,3) =    "open",    "open",
+}
+
+!----------diagnostic for this species----------
+diag_species
+{
+  ndump_fac_ene = 1,
+  ndump_fac_raw = 10000,
+  ndump_fac_tracks = 1,
+  niter_tracks = 1,
+  file_tags = "tag_file_osiris_utils.tag",
+  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+}
+
+!-------------smooth for currents------------- 
+smooth 
+{
+type(1:3) = "5pass", "5pass", "5pass", 
+}
+
+
+"""
+}

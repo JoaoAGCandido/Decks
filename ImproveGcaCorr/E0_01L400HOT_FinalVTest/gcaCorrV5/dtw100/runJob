@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --job-name=WeibelgcaCorrV5__100
+#SBATCH --account=f202500196cpcaa3a
+#SBATCH --partition=normal-arm
+#SBATCH --time=0-00:10:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+
+
+set -euo pipefail
+
+module purge
+module load OpenMPI
+ml HDF5/1.12.2-gompi-2022a
+module load FFTW
+
+
+
+
+# ---- choose branch here ----
+BRANCH="gcaCorrV5"
+WTBASE="$HOME/osiris_worktrees"
+
+WORKTREE="$WTBASE/$BRANCH"
+
+
+
+# ---- executable + input ----
+EXE="osiris-3D-${BRANCH}.e"
+BIN="$WORKTREE/bin/$EXE"
+INPUT="${BRANCH}.in"
+
+
+
+srun "$BIN" "$INPUT"
