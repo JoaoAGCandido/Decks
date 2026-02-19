@@ -28,7 +28,7 @@ WORKTREE="$WTBASE/$BRANCH"
 # ---- executable + input ----
 EXE="osiris-3D-${BRANCH}.e"
 BIN="$WORKTREE/bin/$EXE"
-INPUT="GcaCorr.in"
+INPUT="${BRANCH}.in"
 
 
 
