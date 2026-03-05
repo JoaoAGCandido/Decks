@@ -3,9 +3,9 @@
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-00:30:00
-#SBATCH --nodes=2
-#SBATCH --ntasks=64
-#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --cpus-per-task=2
 
 module purge
 module load OpenMPI
