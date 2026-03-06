@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=MHDGCACorr100
+#SBATCH --job-name=MHDBoris10
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
-#SBATCH --time=0-00:30:00
+#SBATCH --time=0-24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 
@@ -13,4 +13,4 @@ module load FFTW
 
 BIN=../../../../../osiris_JCDev/bin/osiris-3D-deucalion_input_disable_gca_gcaCorr.e
 
-srun "${BIN}" GcaCorr.in
+srun "${BIN}" Boris.in
