@@ -2,12 +2,9 @@
 #SBATCH --job-name=WeibelGcaCorrNoBoris__0_1
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
-#SBATCH --time=0-01:00:00
+#SBATCH --time=0-06:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
-
-
-set -euo pipefail
+#SBATCH --ntasks=8
 
 module purge
 module load OpenMPI
