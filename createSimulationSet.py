@@ -11,8 +11,8 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('Boris', ["1000", "100", "10", "1", "0_1", "0_01"], 'standard', False),
-    SimOpts('Gca', ["1000", "100", "10", "1", "0_1", "0_01"], 'gca', False),
+    SimOpts('Boris', ["1000", "100", "10", "1", "0_1"], 'standard', False),
+    SimOpts('Gca', ["1000", "100", "10", "1", "0_1"], 'gca', False),
     SimOpts('GcaCorr', ["1000", "100", "10", "1", "0_1"], 'gca_corr', False),
     SimOpts('gcaCorrV4', ["1000", "100", "10", "1", "0_1"], 'gca_corr'),
     SimOpts('gcaCorrV5', ["1000", "100", "10", "1", "0_1"], 'gca_corr'),
@@ -144,7 +144,7 @@ diag_species
   ndump_fac_ene = 1,
   ndump_fac_raw = 1000000,
   ndump_fac_tracks = {ndump_fac_tracks},
-  niter_tracks = 100,
+  niter_tracks = {niter_tracks},
   file_tags = "tag_file_osiris_utils.tag",
   ifdmp_tracks_efl(1:3) = .true., .true., .true.,
   ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
@@ -233,7 +233,7 @@ def dt_from_label(dtw_label):
     return BASE_DT * (dtw_value / BASE_DTW)
 
 
-def ndump_fac_tracks_from_label(dtw_label):
+def niter_tracks_from_label(dtw_label):
     dtw_str = dtw_to_label(dtw_label)
     dtw_value = float(dtw_str.replace("_", "."))
     if dtw_value >= NDUMP_TRACKS_ONE_FROM_DTW:
@@ -259,10 +259,12 @@ def write_input_files(base_dir, pushers, template=INPUT_TEMPLATE):
 
             input_file = dtw_path / f"{sim_opts.name}.in"
             dt_value = dt_from_label(dtw)
+            niter_tracks = niter_tracks_from_label(dtw)
             input_file.write_text(
                 template.format(
                     dt=f"{dt_value:.30f}",
-                    ndump_fac_tracks=ndump_fac_tracks_from_label(dtw),
+                    ndump_fac_tracks=niter_tracks,
+                    niter_tracks=niter_tracks,
                     pusher=f'"{sim_opts.pusher}"',
                 )
             )
