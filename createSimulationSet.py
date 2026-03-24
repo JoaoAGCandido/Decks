@@ -11,12 +11,12 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('Boris', ["1000", "100", "10", "1", "0_1"], 'standard', False),
-    SimOpts('Gca', ["1000", "100", "10", "1", "0_1"], 'gca', False),
-    SimOpts('GcaCorr', ["1000", "100", "10", "1", "0_1"], 'gca_corr', False),
-    SimOpts('gcaCorrV4', ["1000", "100", "10", "1", "0_1"], 'gca_corr'),
-    SimOpts('gcaCorrV5', ["1000", "100", "10", "1", "0_1"], 'gca_corr'),
-    SimOpts('gcaCorrNoBoris', ["1000", "100", "10", "1", "0_1"], 'gca_corr'),
+    SimOpts('Boris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'standard', False),
+    SimOpts('Gca', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca', False),
+    SimOpts('GcaCorr', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr', False),
+    SimOpts('gcaCorrV4', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
+    SimOpts('gcaCorrV5', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
+    SimOpts('gcaCorrNoBoris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
 ]
 
 BASE_DTW = 0.01
@@ -142,7 +142,7 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {{
   ndump_fac_ene = 1,
-  ndump_fac_raw = 1000000,
+  !ndump_fac_raw = 1000000,
   ndump_fac_tracks = {ndump_fac_tracks},
   niter_tracks = {niter_tracks},
   file_tags = "tag_file_osiris_utils.tag",
