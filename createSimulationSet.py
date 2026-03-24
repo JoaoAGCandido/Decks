@@ -102,7 +102,7 @@ diag_emf
 !----------number of particle species----------
 particles
 {{
-  interpolation = "quadratic",
+  interpolation = "cubic",
   num_species = 1,
 }}
 
@@ -331,7 +331,7 @@ def write_tag_files_from_raw(
 
 
 if __name__ == "__main__":
-    root = Path("ImproveGcaCorr/Curv_v3")
+    root = Path("ImproveGcaCorr/Curv_v3_cubic")
     raw_source_path = root / "Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5"
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
