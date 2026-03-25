@@ -22,6 +22,7 @@ pushers = [
 BASE_DTW = 0.01
 BASE_DT = 0.00006283185307179586476925286766559
 NDUMP_TRACKS_ONE_FROM_DTW = 10.0 # means that for dtw >= 10, we dump tracks every step, for dtw < 10, we dump tracks every int(round(10/dtw)) steps
+TRACKS_MODE = "per_dtw_1000"  # "per_dtw_1000" or "legacy"
 
 INPUT_TEMPLATE = """simulation
 {{
@@ -67,7 +68,7 @@ space
 !----------time limits ----------
 time
 {{
-  tmin = 0.0d0, tmax  = 125.66370614359172953850573533118,
+  tmin = 0.0d0, tmax  = 6.283185307179587,
 }}
 
 !----------field solver set up----------
@@ -112,7 +113,7 @@ species
   name = "test_electrons",
   num_par_max = 1024,
   rqm = -1.0,
-  num_par_x(1:3) = 1, 1, 1,
+  num_par_x(1:3) = 2,2,2,
   add_tag = .true.,
   push_type = {pusher},
 }}
@@ -126,7 +127,7 @@ udist {{
 profile
 {{
   profile_type(1) = "math func",
-  math_func_expr = "if((x1<3.5)&&(x1>2.25)&&(x2<3.5)&&(x2>2.25)&&(x3<3.5)&&(x3>2.25), 1.0, 0.0)",
+  math_func_expr = "if( x1^2 + x2^2 < 3.5^2 && x1^2 + x2^2 > 2^2 && (x3<2.4) && (x3>(-2.4)), 1.0, 0.0)",
   den_min = 1.d-12,
 }}
 
@@ -233,12 +234,26 @@ def dt_from_label(dtw_label):
     return BASE_DT * (dtw_value / BASE_DTW)
 
 
-def niter_tracks_from_label(dtw_label):
+def legacy_niter_tracks_from_label(dtw_label):
     dtw_str = dtw_to_label(dtw_label)
     dtw_value = float(dtw_str.replace("_", "."))
     if dtw_value >= NDUMP_TRACKS_ONE_FROM_DTW:
         return 1
     return int(round(NDUMP_TRACKS_ONE_FROM_DTW / dtw_value))
+
+
+def scaled_niter_tracks_from_label(dtw_label):
+    dtw_str = dtw_to_label(dtw_label)
+    dtw_value = float(dtw_str.replace("_", "."))
+    return int(round(1000.0 / dtw_value))
+
+
+def niter_tracks_from_label(dtw_label, mode=TRACKS_MODE):
+    if mode == "legacy":
+        return legacy_niter_tracks_from_label(dtw_label)
+    if mode == "per_dtw_1000":
+        return scaled_niter_tracks_from_label(dtw_label)
+    raise ValueError(f"Unknown TRACKS_MODE: {mode}")
 
 
 def job_name_from(base_dir, sim_opts, dtw):
@@ -331,8 +346,8 @@ def write_tag_files_from_raw(
 
 
 if __name__ == "__main__":
-    root = Path("ImproveGcaCorr/Curv_v3_cubic")
-    raw_source_path = root / "Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5"
+    root = Path("StudyConvergence/Curv")
+    raw_source_path = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv/Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
