@@ -347,7 +347,7 @@ def write_tag_files_from_raw(
 
 
 if __name__ == "__main__":
-    root = Path(".")
+    root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv")
     raw_source_path = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv/Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)

@@ -68,7 +68,7 @@ space
 !----------time limits ----------
 time
 {{
-  tmin = 0.0d0, tmax  = 6.283185307179587,
+  tmin = 0.0d0, tmax  = {tmax},
 }}
 
 !----------field solver set up----------
@@ -275,12 +275,12 @@ def write_input_files(base_dir, pushers, template=INPUT_TEMPLATE):
 
             input_file = dtw_path / f"{sim_opts.name}.in"
             dt_value = dt_from_label(dtw)
-            niter_tracks = niter_tracks_from_label(dtw)
             input_file.write_text(
                 template.format(
                     dt=f"{dt_value:.30f}",
-                    ndump_fac_tracks=niter_tracks,
-                    niter_tracks=niter_tracks,
+                    tmax=f"{dt_value:.30f}",
+                    ndump_fac_tracks=1,
+                    niter_tracks=1,
                     pusher=f'"{sim_opts.pusher}"',
                 )
             )
@@ -347,7 +347,7 @@ def write_tag_files_from_raw(
 
 
 if __name__ == "__main__":
-    root = Path(".")
+    root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv_1step")
     raw_source_path = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv/Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
