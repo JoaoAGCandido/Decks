@@ -111,7 +111,7 @@ particles
 species
 {{
   name = "test_electrons",
-  num_par_max = 1024,
+  num_par_max = 6000000,
   rqm = -1.0,
   num_par_x(1:3) = 2,2,2,
   add_tag = .true.,
@@ -121,6 +121,7 @@ species
 !----------inital proper velocities----------
 udist {{
   ufl(1:3)=  0.05d0 , -0.05d0 , 0.0001d0 ,
+  uth(1:3)=  0.001d0 , -0.001d0 , 0.001d0 ,
 }}
 
 !----------density profile for this species----------
@@ -346,7 +347,7 @@ def write_tag_files_from_raw(
 
 
 if __name__ == "__main__":
-    root = Path("StudyConvergence/Curv")
+    root = Path("StudyConvergence/Curv_1step")
     raw_source_path = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv/Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
