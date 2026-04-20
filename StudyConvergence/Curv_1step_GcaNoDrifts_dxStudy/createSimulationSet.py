@@ -11,11 +11,11 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('gcaNoDrifts', [10, 20, 40, 80, 120, 160], 'gca', True),
+    SimOpts('gcaNoDrifts', [24, 40, 60, 80, 120, 160], 'gca', True),
 ]
 
 FIXED_DT = 0.062831853071795867871074392497
-FIXED_NX_Z = 20
+FIXED_NX_Z = 24
 
 INPUT_TEMPLATE = """simulation
 {{

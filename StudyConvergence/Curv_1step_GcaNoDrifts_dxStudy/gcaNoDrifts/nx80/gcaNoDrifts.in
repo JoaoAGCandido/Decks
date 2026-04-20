@@ -13,7 +13,7 @@ node_conf
 !----------spatial grid----------
 grid
 {
-  nx_p(1:3) =  80,80,20,
+  nx_p(1:3) =  80,80,24,
   coordinates = "cartesian",
 }
 
