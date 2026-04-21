@@ -87,7 +87,7 @@ species
   name = "test_electrons",
   num_par_max = 6000000,
   rqm = -1.0,
-  num_par_x(1:3) = 1,1,1,
+  num_par_x(1:3) = 2,2,2,
   add_tag = .true.,
   push_type = "gca",
 }
@@ -118,7 +118,7 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {
   ndump_fac_ene = 1,
-  !ndump_fac_raw = 1000000,
+  ndump_fac_raw = 1000000,
   ndump_fac_tracks = 1,
   niter_tracks = 1,
   file_tags = "tag_file_osiris_utils.tag",

@@ -106,7 +106,7 @@ species
   name = "test_electrons",
   num_par_max = 6000000,
   rqm = -1.0,
-  num_par_x(1:3) = 1,1,1,
+  num_par_x(1:3) = 2,2,2,
   add_tag = .true.,
   push_type = {pusher},
 }}
@@ -137,7 +137,7 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {{
   ndump_fac_ene = 1,
-  !ndump_fac_raw = 1000000,
+  ndump_fac_raw = 1000000,
   ndump_fac_tracks = {ndump_fac_tracks},
   niter_tracks = {niter_tracks},
   file_tags = "tag_file_osiris_utils.tag",
@@ -296,24 +296,23 @@ def write_runjob_files(
 def write_tag_files_from_raw(
     base_dir,
     pushers,
-    raw_source_path,
+    raw_relative_path=Path("MS/RAW/test_electrons/RAW-test_electrons-000000.h5"),
     output_name="tag_file_osiris_utils.tag",
 ):
     base_path = Path(base_dir)
-    raw_path = Path(raw_source_path)
     created_files = []
-
-    if not raw_path.exists():
-        raise FileNotFoundError(f"Raw file not found: {raw_path}")
-
-    raw = ou.OsirisRawFile(raw_path)
 
     for sim_opts in pushers:
         for nx in sim_opts.nx_values:
             nx_label = nx_to_label(nx)
             nx_path = base_path / sim_opts.name / f"nx{nx_label}"
+            raw_path = nx_path / raw_relative_path
+
+            if not raw_path.exists():
+                raise FileNotFoundError(f"Raw file not found: {raw_path}")
 
             output_path = nx_path / output_name
+            raw = ou.OsirisRawFile(raw_path)
             raw.raw_to_file_tags(output_path)
             created_files.append(output_path)
 
@@ -322,11 +321,10 @@ def write_tag_files_from_raw(
 
 if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv_1step_GcaNoDrifts_dxStudy")
-    raw_source_path = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv/Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    created_tags = write_tag_files_from_raw(root, pushers, raw_source_path)
+    created_tags = write_tag_files_from_raw(root, pushers)
 
     for path in created_dirs:
         print(path)
