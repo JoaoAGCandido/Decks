@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=Curv1stepGcaNoDriftsdxStudygcaNoDriftsnx60
+#SBATCH --job-name=Curv1stepGcaNoDriftsdxStudygcaNoDrifts1ppcnx60
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-24:00:00
@@ -12,7 +12,7 @@ ml HDF5/1.12.2-gompi-2022a
 module load FFTW
 
 # ---- choose branch here ----
-BRANCH="gcaNoDrifts"
+BRANCH="gcaNoDrifts1ppc"
 WTBASE="$HOME/osiris_worktrees"
 
 WORKTREE="$WTBASE/$BRANCH"

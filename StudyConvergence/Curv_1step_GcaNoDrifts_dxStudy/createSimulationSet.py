@@ -11,8 +11,9 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('gcaNoDrifts', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
-    SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
+    # SimOpts('gcaNoDrifts', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
+    SimOpts('gcaNoDrifts1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
+    # SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
 ]
 
 FIXED_DT = 0.062831853071795867871074392497
@@ -107,7 +108,7 @@ species
   name = "test_electrons",
   num_par_max = 6000000,
   rqm = -1.0,
-  num_par_x(1:3) = 2,2,2,
+  num_par_x(1:3) = 1,1,1,
   add_tag = .true.,
   push_type = {pusher},
 }}
