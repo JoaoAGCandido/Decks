@@ -12,6 +12,7 @@ class SimOpts:
 
 pushers = [
     SimOpts('gcaNoDrifts', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
+    SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
 ]
 
 FIXED_DT = 0.062831853071795867871074392497
