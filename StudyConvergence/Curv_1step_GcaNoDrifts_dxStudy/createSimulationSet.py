@@ -2,17 +2,26 @@ from pathlib import Path
 import osiris_utils as ou
 
 class SimOpts:
-    def __init__(self, name, nx_values, pusher, worktree=True, sim_time="0-24:00:00"):
+    def __init__(
+        self,
+        name,
+        nx_values,
+        pusher,
+        worktree=True,
+        sim_time="0-24:00:00",
+        worktree_branch=None,
+    ):
         self.name = name
         self.nx_values = nx_values
         self.pusher = pusher
         self.worktree = worktree
         self.sim_time = sim_time
+        self.worktree_branch = worktree_branch if worktree_branch is not None else name
 
 
 pushers = [
     # SimOpts('gcaNoDrifts', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
-    SimOpts('gcaNoDrifts1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
+    SimOpts('gcaNoDrifts1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts'),
     # SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
 ]
 
@@ -286,7 +295,7 @@ def write_runjob_files(
                 template.format(
                     job_name=job_name_from(base_dir, sim_opts, nx),
                     sim_time=sim_opts.sim_time,
-                    branch=sim_opts.name,
+                    branch=sim_opts.worktree_branch,
                     input_name=f"{sim_opts.name}.in",
                 )
             )
@@ -326,7 +335,7 @@ if __name__ == "__main__":
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    created_tags = write_tag_files_from_raw(root, pushers)
+    # created_tags = write_tag_files_from_raw(root, pushers)
 
     for path in created_dirs:
         print(path)
@@ -334,6 +343,6 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    for path in created_tags:
-        print(path)
+    # for path in created_tags:
+    #     print(path)
     

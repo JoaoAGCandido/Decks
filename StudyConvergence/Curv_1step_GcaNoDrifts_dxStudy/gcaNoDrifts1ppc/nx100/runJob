@@ -12,7 +12,7 @@ ml HDF5/1.12.2-gompi-2022a
 module load FFTW
 
 # ---- choose branch here ----
-BRANCH="gcaNoDrifts1ppc"
+BRANCH="gcaNoDrifts"
 WTBASE="$HOME/osiris_worktrees"
 
 WORKTREE="$WTBASE/$BRANCH"
