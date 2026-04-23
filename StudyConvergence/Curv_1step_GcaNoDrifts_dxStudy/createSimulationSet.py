@@ -140,11 +140,11 @@ diag_species
 {{
   ndump_fac_ene = 1,
   ndump_fac_raw = 1000000,
-  ndump_fac_tracks = {ndump_fac_tracks},
-  niter_tracks = {niter_tracks},
-  file_tags = "tag_file_osiris_utils.tag",
-  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  !ndump_fac_tracks = {ndump_fac_tracks},
+  !niter_tracks = {niter_tracks},
+  !file_tags = "tag_file_osiris_utils.tag",
+  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
