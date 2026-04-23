@@ -149,11 +149,11 @@ diag_species
 {{
   ndump_fac_ene = 1,
   ndump_fac_raw = 1000000,
-  !ndump_fac_tracks = {ndump_fac_tracks},
-  !niter_tracks = {niter_tracks},
-  !file_tags = "tag_file_osiris_utils.tag",
-  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_tracks = {ndump_fac_tracks},
+  niter_tracks = {niter_tracks},
+  file_tags = "tag_file_osiris_utils.tag",
+  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
@@ -335,7 +335,7 @@ if __name__ == "__main__":
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    # created_tags = write_tag_files_from_raw(root, pushers)
+    created_tags = write_tag_files_from_raw(root, pushers)
 
     for path in created_dirs:
         print(path)
@@ -343,6 +343,6 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    # for path in created_tags:
-    #     print(path)
+    for path in created_tags:
+        print(path)
     
