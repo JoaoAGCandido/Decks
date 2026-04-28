@@ -10,6 +10,7 @@ class SimOpts:
         worktree=True,
         sim_time="0-24:00:00",
         worktree_branch=None,
+        num_par_x=(1, 1, 1),
     ):
         self.name = name
         self.nx_values = nx_values
@@ -17,12 +18,13 @@ class SimOpts:
         self.worktree = worktree
         self.sim_time = sim_time
         self.worktree_branch = worktree_branch if worktree_branch is not None else name
+        self.num_par_x = num_par_x
 
 
 pushers = [
-    # SimOpts('gcaNoDrifts', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
-    SimOpts('gcaNoDrifts1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts'),
-    # SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True),
+    SimOpts('gcaNoDrifts', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, num_par_x=(2, 2, 2)),
+    SimOpts('gcaNoDrifts1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts', num_par_x=(1, 1, 1)),
+    SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, num_par_x=(2, 2, 2)),
 ]
 
 FIXED_DT = 0.062831853071795867871074392497
@@ -117,7 +119,7 @@ species
   name = "test_electrons",
   num_par_max = 6000000,
   rqm = -1.0,
-  num_par_x(1:3) = 1,1,1,
+  num_par_x(1:3) = {num_par_x},
   add_tag = .true.,
   push_type = {pusher},
 }}
@@ -148,12 +150,12 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {{
   ndump_fac_ene = 1,
-  ndump_fac_raw = 1000000,
-  ndump_fac_tracks = {ndump_fac_tracks},
-  niter_tracks = {niter_tracks},
-  file_tags = "tag_file_osiris_utils.tag",
-  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_raw = 1,
+  !ndump_fac_tracks = {ndump_fac_tracks},
+  !niter_tracks = {niter_tracks},
+  !file_tags = "tag_file_osiris_utils.tag",
+  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
@@ -242,6 +244,14 @@ def nx_to_string(nx):
     return f"{value},{value},{FIXED_NX_Z}"
 
 
+def num_par_x_to_string(num_par_x):
+    if isinstance(num_par_x, int):
+        return f"{num_par_x},{num_par_x},{num_par_x}"
+    if len(num_par_x) != 3:
+        raise ValueError(f"num_par_x must have 3 components, got {num_par_x}")
+    return ",".join(str(int(value)) for value in num_par_x)
+
+
 def job_name_from(base_dir, sim_opts, nx):
     test_name = Path(base_dir).name.replace("_", "")
     nx_label = nx_to_label(nx)
@@ -267,6 +277,7 @@ def write_input_files(base_dir, pushers, template=INPUT_TEMPLATE):
                     ndump_fac_tracks=1,
                     niter_tracks=1,
                     pusher=f'"{sim_opts.pusher}"',
+                    num_par_x=num_par_x_to_string(sim_opts.num_par_x),
                 )
             )
             created_files.append(input_file)
@@ -335,7 +346,7 @@ if __name__ == "__main__":
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    created_tags = write_tag_files_from_raw(root, pushers)
+    # created_tags = write_tag_files_from_raw(root, pushers)
 
     for path in created_dirs:
         print(path)
@@ -343,6 +354,6 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    for path in created_tags:
-        print(path)
+    # for path in created_tags:
+    #     print(path)
     
