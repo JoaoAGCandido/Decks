@@ -11,12 +11,13 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('Boris', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'standard', False),
-    SimOpts('Gca', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', False),
-    SimOpts('GcaCorr', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr', False),
-    SimOpts('gcaCorrV4', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
-    SimOpts('gcaCorrV5', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
-    SimOpts('gcaCorrNoBoris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
+    # SimOpts('Boris', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'standard', False),
+    # SimOpts('Gca', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', False),
+    # SimOpts('GcaCorr', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr', False),
+    # SimOpts('gcaCorrV4', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
+    # SimOpts('gcaCorrV5', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
+    # SimOpts('gcaCorrNoBoris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
+    SimOpts('gcaNoDrifts_DoublePrec_GcaDoubleprec', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca')
 ]
 
 BASE_DTW = 0.01
