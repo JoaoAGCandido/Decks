@@ -22,8 +22,8 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('gcaNoDrifts_DoublePrec', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts_doublePrecDiag', num_par_x=(2, 2, 2)),
-    SimOpts('gcaNoDrifts_DoublePrec1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts_doublePrecDiag', num_par_x=(1, 1, 1)),
+    SimOpts('gcaNoDrifts_DoublePrec_GcaDoubleprec', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts_doublePrecDiag_and_Gca', num_par_x=(2, 2, 2)),
+    # SimOpts('gcaNoDrifts_DoublePrec1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts_doublePrecDiag', num_par_x=(1, 1, 1)),
     # SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, num_par_x=(2, 2, 2)),
 ]
 
