@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=Curv1stepgcaNoDrifts_DoublePrec_GcaDoubleprec50
+#SBATCH --job-name=Curv1stepgcaNoDrifts_doublePrecDiag_and_Gca50
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-24:00:00
@@ -12,7 +12,7 @@ ml HDF5/1.12.2-gompi-2022a
 module load FFTW
 
 # ---- choose branch here ----
-BRANCH="gcaNoDrifts_DoublePrec_GcaDoubleprec"
+BRANCH="gcaNoDrifts_doublePrecDiag_and_Gca"
 WTBASE="$HOME/osiris_worktrees"
 
 WORKTREE="$WTBASE/$BRANCH"
@@ -20,6 +20,6 @@ WORKTREE="$WTBASE/$BRANCH"
 # ---- executable + input ----
 EXE="osiris-3D-${BRANCH}.e"
 BIN="$WORKTREE/bin/$EXE"
-INPUT="gcaNoDrifts_DoublePrec_GcaDoubleprec.in"
+INPUT="gcaNoDrifts_doublePrecDiag_and_Gca.in"
 
 srun "$BIN" "$INPUT"
