@@ -17,7 +17,7 @@ pushers = [
     # SimOpts('gcaCorrV4', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
     # SimOpts('gcaCorrV5', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
     # SimOpts('gcaCorrNoBoris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
-    SimOpts('gcaNoDrifts_DoublePrec_GcaDoubleprec', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca')
+    SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca')
 ]
 
 BASE_DTW = 0.01
