@@ -2,12 +2,23 @@ from pathlib import Path
 import osiris_utils as ou
 
 class SimOpts:
-    def __init__(self, name, dtw_values, pusher, worktree=True, sim_time="0-24:00:00"):
+    def __init__(
+        self,
+        name,
+        dtw_values,
+        pusher,
+        worktree=True,
+        sim_time="0-24:00:00",
+        branch=None,
+        worktree_folder=None,
+    ):
         self.name = name
         self.dtw_values = dtw_values
         self.pusher = pusher
         self.worktree = worktree
         self.sim_time = sim_time
+        self.branch = branch if branch is not None else name
+        self.worktree_folder = worktree_folder if worktree_folder is not None else self.branch
 
 
 pushers = [
@@ -19,7 +30,7 @@ pushers = [
     # SimOpts('gcaCorrNoBoris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
     # SimOpts('GcaHighRes', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
-    SimOpts('gcaNoDrifts', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
+    SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_maxIter1000', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca_maxIter1000", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
 ]
 
 BASE_DTW = 0.01
@@ -179,7 +190,7 @@ module load FFTW
 BRANCH="{branch}"
 WTBASE="$HOME/osiris_worktrees"
 
-WORKTREE="$WTBASE/$BRANCH"
+WORKTREE="$WTBASE/{worktree_folder}"
 
 # ---- executable + input ----
 EXE="osiris-3D-${{BRANCH}}.e"
@@ -313,7 +324,8 @@ def write_runjob_files(
                 template.format(
                     job_name=job_name_from(base_dir, sim_opts, dtw),
                     sim_time=sim_opts.sim_time,
-                    branch=sim_opts.name,
+                    branch=sim_opts.branch,
+                    worktree_folder=sim_opts.worktree_folder,
                     input_name=f"{sim_opts.name}.in",
                 )
             )
