@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         3251884590.,
+  "input_deck_crc":         2658768765.,
   "input_deck": """
 simulation
 {
@@ -34,7 +34,7 @@ node_conf
 !----------spatial grid----------
 grid
 {
-  nx_p(1:3) =  80, 80, 80,
+  nx_p(1:3) =  140, 140, 24,
   coordinates = "cartesian",
 }
 
