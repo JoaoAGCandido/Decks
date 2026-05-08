@@ -9,6 +9,8 @@ class SimOpts:
         pusher,
         worktree=True,
         sim_time="0-24:00:00",
+        branch=None,
+        worktree_folder=None,
         worktree_branch=None,
         num_par_x=(1, 1, 1),
     ):
@@ -17,7 +19,11 @@ class SimOpts:
         self.pusher = pusher
         self.worktree = worktree
         self.sim_time = sim_time
-        self.worktree_branch = worktree_branch if worktree_branch is not None else name
+        if branch is None:
+            branch = worktree_branch
+        self.branch = branch if branch is not None else name
+        self.worktree_branch = self.branch
+        self.worktree_folder = worktree_folder if worktree_folder is not None else self.branch
         self.num_par_x = num_par_x
 
 
@@ -182,7 +188,7 @@ module load FFTW
 BRANCH="{branch}"
 WTBASE="$HOME/osiris_worktrees"
 
-WORKTREE="$WTBASE/$BRANCH"
+WORKTREE="$WTBASE/{worktree_folder}"
 
 # ---- executable + input ----
 EXE="osiris-3D-${{BRANCH}}.e"
@@ -306,7 +312,8 @@ def write_runjob_files(
                 template.format(
                     job_name=job_name_from(base_dir, sim_opts, nx),
                     sim_time=sim_opts.sim_time,
-                    branch=sim_opts.worktree_branch,
+                    branch=sim_opts.branch,
+                    worktree_folder=sim_opts.worktree_folder,
                     input_name=f"{sim_opts.name}.in",
                 )
             )
