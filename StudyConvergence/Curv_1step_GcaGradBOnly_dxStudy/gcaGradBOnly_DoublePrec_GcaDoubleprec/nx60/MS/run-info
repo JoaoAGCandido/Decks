@@ -1,5 +1,5 @@
 build_info = {
-  "version": "JC-thesis-end-26-g98023d1",
+  "version": "JC-thesis-end-27-g4d7aae3",
   "branch": "gcaGradBOnly_doublePrecDiag_and_Gca",
   "dimensions": "3",
   "precision": "DOUBLE",
@@ -8,7 +8,7 @@ build_info = {
   "build_tool": "make",
   "build_flags": {
     "FPP"  :"gfortran -C -E -x assembler-with-cpp -DHDF5",
-    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"JC-thesis-end-26-g98023d1\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"JC-thesis-end-27-g4d7aae3\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
     "F90"  :"mpif90 -cpp",
     "F90F" :"-pipe -ffree-line-length-none -fno-range-check -O2 -ftree-vectorize -march=native -fno-math-errno -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/include -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/include/ -I/eb/aarch64/software/FFTW/3.3.10-llvm-compilers-21.1.8/include",
     "CF"   :"-Ofast -std=c99 -O2 -ftree-vectorize -march=native -fno-math-errno -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         2740727823.,
+  "input_deck_crc":         2960986822.,
   "input_deck": """
 simulation
 {
@@ -140,11 +140,11 @@ diag_species
 {
   ndump_fac_ene = 1,
   ndump_fac_raw = 1,
-  !ndump_fac_tracks = 1,
-  !niter_tracks = 1,
-  !file_tags = "tag_file_osiris_utils.tag",
-  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_tracks = 1,
+  niter_tracks = 1,
+  file_tags = "tag_file_osiris_utils.tag",
+  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }
 
 !-------------smooth for currents-------------

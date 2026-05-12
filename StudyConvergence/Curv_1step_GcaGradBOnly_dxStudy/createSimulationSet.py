@@ -162,6 +162,9 @@ diag_species
   file_tags = "tag_file_osiris_utils.tag",
   ifdmp_tracks_efl(1:3) = .true., .true., .true.,
   ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
+  ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
+  ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
