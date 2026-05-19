@@ -356,7 +356,7 @@ if __name__ == "__main__":
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    # created_tags = write_tag_files_from_raw(root, pushers)
+    created_tags = write_tag_files_from_raw(root, pushers)
 
     for path in created_dirs:
         print(path)
@@ -364,6 +364,6 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    # for path in created_tags:
-    #     print(path)
+    for path in created_tags:
+        print(path)
     
