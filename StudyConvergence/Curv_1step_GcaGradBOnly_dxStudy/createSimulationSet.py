@@ -28,7 +28,7 @@ class SimOpts:
 
 
 pushers = [
-    SimOpts('gcaGradBOnly_DoublePrec_GcaDoubleprec', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaGradBOnly_doublePrecDiag_and_Gca', num_par_x=(2, 2, 2)),
+    SimOpts('gcaGradBOnly_CorrectedGca', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaGradBOnly_doublePrecDiag_and_Gca', num_par_x=(2, 2, 2)),
     # SimOpts('gcaNoDrifts_DoublePrec1ppc', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, worktree_branch='gcaNoDrifts_doublePrecDiag', num_par_x=(1, 1, 1)),
     # SimOpts('gcaCurvOnly', [24, 40, 60, 80, 100, 120, 140, 160, 180], 'gca', True, num_par_x=(2, 2, 2)),
 ]
@@ -157,14 +157,14 @@ diag_species
 {{
   ndump_fac_ene = 1,
   ndump_fac_raw = 1,
-  ndump_fac_tracks = {ndump_fac_tracks},
-  niter_tracks = {niter_tracks},
-  file_tags = "tag_file_osiris_utils.tag",
-  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
-  ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
-  ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
-  ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
+  !ndump_fac_tracks = {ndump_fac_tracks},
+  !niter_tracks = {niter_tracks},
+  !file_tags = "tag_file_osiris_utils.tag",
+  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
@@ -356,7 +356,7 @@ if __name__ == "__main__":
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    created_tags = write_tag_files_from_raw(root, pushers)
+    # created_tags = write_tag_files_from_raw(root, pushers)
 
     for path in created_dirs:
         print(path)
@@ -364,6 +364,6 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    for path in created_tags:
-        print(path)
+    # for path in created_tags:
+    #     print(path)
     
