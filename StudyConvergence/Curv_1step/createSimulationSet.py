@@ -1,6 +1,8 @@
 from pathlib import Path
 import osiris_utils as ou
 
+DEFAULT_N_CELLS = 80
+
 class SimOpts:
     def __init__(
         self,
@@ -11,6 +13,7 @@ class SimOpts:
         sim_time="0-24:00:00",
         branch=None,
         worktree_folder=None,
+        n_cells=DEFAULT_N_CELLS,
     ):
         self.name = name
         self.dtw_values = dtw_values
@@ -19,6 +22,7 @@ class SimOpts:
         self.sim_time = sim_time
         self.branch = branch if branch is not None else name
         self.worktree_folder = worktree_folder if worktree_folder is not None else self.branch
+        self.n_cells = n_cells
 
 
 pushers = [
@@ -30,7 +34,11 @@ pushers = [
     # SimOpts('gcaCorrNoBoris', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr'),
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
     # SimOpts('GcaHighRes', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
-    SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
+    # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
+    SimOpts('GcaStable_nx80', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', False, n_cells=80),
+    SimOpts('GcaStable_nx120', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', False, n_cells=120),
+    SimOpts('GcaStable_nx160', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', False, n_cells=160),
+    SimOpts('GcaStable_nx200', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', False, n_cells=200),
 ]
 
 BASE_DTW = 0.01
@@ -53,7 +61,7 @@ node_conf
 !----------spatial grid----------
 grid
 {{
-  nx_p(1:3) =  180, 180, 24,
+  nx_p(1:3) =  {n_cells}, {n_cells}, 24,
   coordinates = "cartesian",
 }}
 
@@ -158,12 +166,12 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {{
   ndump_fac_ene = 1,
-  !ndump_fac_raw = 1000000,
-  ndump_fac_tracks = {ndump_fac_tracks},
-  niter_tracks = {niter_tracks},
-  file_tags = "tag_file_osiris_utils.tag",
-  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_raw = 1000000,
+  !ndump_fac_tracks = {ndump_fac_tracks},
+  !niter_tracks = {niter_tracks},
+  !file_tags = "tag_file_osiris_utils.tag",
+  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
@@ -291,6 +299,7 @@ def write_input_files(base_dir, pushers, template=INPUT_TEMPLATE):
             dt_value = dt_from_label(dtw)
             input_file.write_text(
                 template.format(
+                    n_cells=sim_opts.n_cells,
                     dt=f"{dt_value:.30f}",
                     tmax=f"{dt_value:.30f}",
                     ndump_fac_tracks=1,
@@ -367,7 +376,7 @@ if __name__ == "__main__":
     created_dirs = create_simulation_tree(root, pushers)
     created_files = write_input_files(root, pushers)
     created_runjobs = write_runjob_files(root, pushers)
-    created_tags = write_tag_files_from_raw(root, pushers, raw_source_path)
+    # created_tags = write_tag_files_from_raw(root, pushers, raw_source_path)
 
     for path in created_dirs:
         print(path)
@@ -375,6 +384,6 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    for path in created_tags:
-        print(path)
+    # for path in created_tags:
+    #     print(path)
     
