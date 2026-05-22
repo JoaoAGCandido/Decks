@@ -45,6 +45,7 @@ BASE_DTW = 0.01
 BASE_DT = 0.00006283185307179586476925286766559
 NDUMP_TRACKS_ONE_FROM_DTW = 10.0 # means that for dtw >= 10, we dump tracks every step, for dtw < 10, we dump tracks every int(round(10/dtw)) steps
 TRACKS_MODE = "per_dtw_1000"  # "per_dtw_1000" or "legacy"
+RAW_SOURCE_RELATIVE_PATH = Path("MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
 
 INPUT_TEMPLATE = """simulation
 {{
@@ -166,12 +167,12 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {{
   ndump_fac_ene = 1,
-  ndump_fac_raw = 1000000,
-  !ndump_fac_tracks = {ndump_fac_tracks},
-  !niter_tracks = {niter_tracks},
-  !file_tags = "tag_file_osiris_utils.tag",
-  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_raw = 1,
+  {tag_comment}ndump_fac_tracks = {ndump_fac_tracks},
+  {tag_comment}niter_tracks = {niter_tracks},
+  {tag_comment}file_tags = "tag_file_osiris_utils.tag",
+  {tag_comment}ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }}
 
 !-------------smooth for currents-------------
@@ -285,7 +286,7 @@ def job_name_from(base_dir, sim_opts, dtw):
     return f"{test_name}{sim_opts.name}{dtw_label}"
 
 
-def write_input_files(base_dir, pushers, template=INPUT_TEMPLATE):
+def write_input_files(base_dir, pushers, tags=False, template=INPUT_TEMPLATE):
     base_path = Path(base_dir)
     created_files = []
 
@@ -304,6 +305,7 @@ def write_input_files(base_dir, pushers, template=INPUT_TEMPLATE):
                     tmax=f"{dt_value:.30f}",
                     ndump_fac_tracks=1,
                     niter_tracks=1,
+                    tag_comment="" if tags else "!",
                     pusher=f'"{sim_opts.pusher}"',
                 )
             )
@@ -343,27 +345,27 @@ def write_runjob_files(
     return created_files
 
 
-def write_tag_files_from_raw(
-    base_dir,
-    pushers,
-    raw_source_path,
-    output_name="tag_file_osiris_utils.tag",
-):
+def raw_source_path_for(dtw_path):
+    return dtw_path / RAW_SOURCE_RELATIVE_PATH
+
+
+def write_tag_files_from_own_raw(base_dir, pushers, output_name="tag_file_osiris_utils.tag"):
     base_path = Path(base_dir)
-    raw_path = Path(raw_source_path)
     created_files = []
-
-    if not raw_path.exists():
-        raise FileNotFoundError(f"Raw file not found: {raw_path}")
-
-    raw = ou.OsirisRawFile(raw_path)
 
     for sim_opts in pushers:
         for dtw in sim_opts.dtw_values:
             dtw_label = dtw_to_label(dtw)
             dtw_path = base_path / sim_opts.name / f"dtw{dtw_label}"
+            raw_path = raw_source_path_for(dtw_path)
+
+            if not raw_path.exists():
+                raise FileNotFoundError(
+                    f"Raw file not found: {raw_path}. Run once with TAGS = False first."
+                )
 
             output_path = dtw_path / output_name
+            raw = ou.OsirisRawFile(raw_path)
             raw.raw_to_file_tags(output_path)
             created_files.append(output_path)
 
@@ -372,11 +374,14 @@ def write_tag_files_from_raw(
 
 if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv_1step")
-    raw_source_path = Path("/home/exxxx5/Tese/Decks/StudyConvergence/Curv/Gca/dtw1000/MS/RAW/test_electrons/RAW-test_electrons-000000.h5")
+    TAGS = True
+
     created_dirs = create_simulation_tree(root, pushers)
-    created_files = write_input_files(root, pushers)
+    if TAGS:
+        created_tags = write_tag_files_from_own_raw(root, pushers)
+
+    created_files = write_input_files(root, pushers, TAGS)
     created_runjobs = write_runjob_files(root, pushers)
-    # created_tags = write_tag_files_from_raw(root, pushers, raw_source_path)
 
     for path in created_dirs:
         print(path)
@@ -384,6 +389,7 @@ if __name__ == "__main__":
         print(path)
     for path in created_runjobs:
         print(path)
-    # for path in created_tags:
-    #     print(path)
-    
+    if TAGS:
+        for path in created_tags:
+            print(path)
+        

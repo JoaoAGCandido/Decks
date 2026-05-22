@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         2635999459.,
+  "input_deck_crc":         3620770950.,
   "input_deck": """
 simulation
 {
@@ -139,12 +139,12 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {
   ndump_fac_ene = 1,
-  ndump_fac_raw = 1000000,
-  !ndump_fac_tracks = 1,
-  !niter_tracks = 1,
-  !file_tags = "tag_file_osiris_utils.tag",
-  !ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_raw = 1,
+  ndump_fac_tracks = 1,
+  niter_tracks = 1,
+  file_tags = "tag_file_osiris_utils.tag",
+  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }
 
 !-------------smooth for currents-------------
