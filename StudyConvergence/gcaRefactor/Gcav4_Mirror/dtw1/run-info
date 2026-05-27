@@ -1,6 +1,6 @@
 build_info = {
-  "version": "4.4.4-346-g9c198e0",
-  "branch": "HEAD",
+  "version": "4.4.4-354-g70efcc8-dirty",
+  "branch": "deucalion_gca",
   "dimensions": "3",
   "precision": "DOUBLE",
   "build_type": "production",
@@ -8,7 +8,7 @@ build_info = {
   "build_tool": "make",
   "build_flags": {
     "FPP"  :"gfortran -C -E -x assembler-with-cpp -DHDF5",
-    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-346-g9c198e0\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-354-g70efcc8-dirty\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
     "F90"  :"mpif90 -cpp",
     "F90F" :"-pipe -ffree-line-length-none -fno-range-check -O2 -ftree-vectorize -march=native -fno-math-errno -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/include -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/include/ -I/eb/aarch64/software/FFTW/3.3.10-llvm-compilers-21.1.8/include",
     "CF"   :"-Ofast -std=c99 -O2 -ftree-vectorize -march=native -fno-math-errno -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         3584409708.,
+  "input_deck_crc":         3765292188.,
   "input_deck": """
 simulation
 {
@@ -63,7 +63,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 125.66370614359172953850573533118,
+  tmin = 0.0d0, tmax  = 0.006283185307179586613635091652, !125.66370614359172953850573533118,
 }
 
 !----------field solver set up----------
@@ -139,12 +139,11 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {
   ndump_fac_ene = 1,
-  ndump_fac_raw = 1000000,
-  ndump_fac_tracks = 1,
-  niter_tracks = 1,
-  file_tags = "tag_file_osiris_utils.tag",
-  ifdmp_tracks_efl(1:3) = .true., .true., .true.,
-  ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  ndump_fac_raw = 1,
+  !ndump_fac_tracks = 1,
+  !niter_tracks = 1,
+  !file_tags = "tag_file_osiris_utils.tag",
+  !ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }
 
 !-------------smooth for currents-------------

@@ -546,7 +546,7 @@ def write_tag_files(base_dir, pushers, tag_source_path=None, output_name="tag_fi
 
 if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor")
-    TAGS = False
+    TAGS = True
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/Curv_1step/GcaStable_nx80/dtw0_1/tag_file_osiris_utils.tag"
     TAG_SOURCE_PATH = None
     created_dirs = create_simulation_tree(root, pushers)

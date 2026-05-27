@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         3359103691.,
+  "input_deck_crc":          822510609.,
   "input_deck": """
 simulation
 {
@@ -41,7 +41,7 @@ grid
 !----------time step and global data dump timestep number----------
 time_step
 {
-  dt     =   0.628318530717958734221895156224,
+  dt     =   6.283185307179587120174346637214,
   ndump  =    1,
 }
 
@@ -63,7 +63,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 0.628318530717958734221895156224, !125.66370614359172953850573533118,
+  tmin = 0.0d0, tmax  = 6.283185307179587120174346637214, !125.66370614359172953850573533118,
 }
 
 !----------field solver set up----------
