@@ -2,3 +2,5 @@
 *_ene
 *slurm*
 *.codex
+__pycache__/
+*.py[cod]

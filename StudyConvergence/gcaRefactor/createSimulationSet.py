@@ -39,7 +39,7 @@ pushers = [
     # SimOpts('GcaHighRes', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
-    SimOpts('Gcav4_Mirror', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
+    SimOpts('Gcav4_Mirror', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
 
 ]
 
@@ -228,7 +228,7 @@ space
 !----------time limits ----------
 time
 {{
-  tmin = 0.0d0, tmax  = 125.66370614359172953850573533118,
+  tmin = 0.0d0, tmax  = {tmax}, !125.66370614359172953850573533118,
 }}
 
 !----------field solver set up----------
@@ -304,11 +304,10 @@ type(1:2,3) =    "open",    "open",
 diag_species
 {{
   ndump_fac_ene = 1,
-  ndump_fac_raw = 1000000,
+  ndump_fac_raw = 1,
   {tag_comment}ndump_fac_tracks = {ndump_fac_tracks},
   {tag_comment}niter_tracks = {niter_tracks},
   {tag_comment}file_tags = "tag_file_osiris_utils.tag",
-  {tag_comment}ifdmp_tracks_efl(1:3) = .true., .true., .true.,
   {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
 }}
 
@@ -547,7 +546,7 @@ def write_tag_files(base_dir, pushers, tag_source_path=None, output_name="tag_fi
 
 if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor")
-    TAGS = True
+    TAGS = False
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/Curv_1step/GcaStable_nx80/dtw0_1/tag_file_osiris_utils.tag"
     TAG_SOURCE_PATH = None
     created_dirs = create_simulation_tree(root, pushers)
