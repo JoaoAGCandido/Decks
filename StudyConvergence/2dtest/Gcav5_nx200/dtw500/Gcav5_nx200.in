@@ -13,14 +13,14 @@ node_conf
 !----------spatial grid----------
 grid
 {
-  nx_p(1:2) =  100, 100,
+  nx_p(1:2) =  200, 200,
   coordinates = "cartesian",
 }
 
 !----------time step and global data dump timestep number----------
 time_step
 {
-  dt     =   0.000062831853071795869931058520,
+  dt     =   3.141592653589793560087173318607,
   ndump  =    1,
 }
 
@@ -42,7 +42,7 @@ space
 !----------time limits ----------
 time
 {
-  tmin = 0.0d0, tmax  = 0.000062831853071795869931058520,
+  tmin = 0.0d0, tmax  = 3.141592653589793560087173318607,
 }
 
 !----------field solver set up----------

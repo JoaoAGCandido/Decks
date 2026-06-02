@@ -41,8 +41,8 @@ pushers = [
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
     # SimOpts('Gcav4_Mirror_Prec', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
     SimOpts('Gcav5_nx100', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=100),
+    SimOpts('Gcav5_nx200', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=200),
     SimOpts('Gcav5_nx400', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=400),
-    SimOpts('Gcav5_nx800', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=800),
 
 ]
 
@@ -140,7 +140,7 @@ species
   name = "test_electrons",
   num_par_max = 6000000,
   rqm = -1.0,
-  num_par_x(1:2) = 8, 8,
+  num_par_x(1:2) = 2, 2,
   add_tag = .true.,
   push_type = {pusher},
 }}
@@ -547,7 +547,7 @@ def write_tag_files(base_dir, pushers, tag_source_path=None, output_name="tag_fi
 
 if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/2dtest")
-    TAGS = True
+    TAGS = False
     TAG_SOURCE_PATH = None
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4_Mirror/dtw10/tag_file_osiris_utils.tag"
     created_dirs = create_simulation_tree(root, pushers)

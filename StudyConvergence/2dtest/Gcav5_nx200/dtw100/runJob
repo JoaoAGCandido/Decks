@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --job-name=2dtestGcav5_nx200100
+#SBATCH --account=f202500196cpcaa3a
+#SBATCH --partition=normal-arm
+#SBATCH --time=0-24:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+
+module purge
+module load OpenMPI
+ml HDF5/1.12.2-gompi-2022a
+module load FFTW
+
+# ---- choose branch here ----
+BRANCH="deucalion_gca"
+WTBASE="$HOME/osiris_worktrees"
+
+WORKTREE="$WTBASE/deucalion_gca"
+
+# ---- executable + input ----
+EXE="osiris-2D-${BRANCH}.e"
+BIN="$WORKTREE/bin/$EXE"
+INPUT="Gcav5_nx200.in"
+
+srun "$BIN" "$INPUT"
