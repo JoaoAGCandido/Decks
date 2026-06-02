@@ -344,7 +344,7 @@ WTBASE="$HOME/osiris_worktrees"
 WORKTREE="$WTBASE/{worktree_folder}"
 
 # ---- executable + input ----
-EXE="osiris-3D-${{BRANCH}}.e"
+EXE="osiris-2D-${{BRANCH}}.e"
 BIN="$WORKTREE/bin/$EXE"
 INPUT="{input_name}"
 
@@ -364,7 +364,7 @@ module load OpenMPI
 ml HDF5/1.12.2-gompi-2022a
 module load FFTW
 
-BIN="$HOME/osiris_JCDev/bin/osiris-3D-deucalion_input_disable_gca_gcaCorr.e"
+BIN="$HOME/osiris_JCDev/bin/osiris-2D-deucalion_input_disable_gca_gcaCorr.e"
 
 srun "${{BIN}}" {input_name}
 """
