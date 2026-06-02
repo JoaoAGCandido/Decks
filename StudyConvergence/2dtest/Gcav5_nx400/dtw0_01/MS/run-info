@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         1461118054.,
+  "input_deck_crc":         3341049790.,
   "input_deck": """
 simulation
 {
@@ -107,7 +107,7 @@ species
   name = "test_electrons",
   num_par_max = 6000000,
   rqm = -1.0,
-  num_par_x(1:2) = 8, 8,
+  num_par_x(1:2) = 2, 2,
   add_tag = .true.,
   push_type = "gca",
 }
