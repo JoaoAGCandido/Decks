@@ -40,7 +40,7 @@ pushers = [
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
     # SimOpts('Gcav4_Mirror_Prec', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
-    SimOpts('Gcav4_Mirror_ExplicitBranch', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
+    SimOpts('Gcav5_NoCurv', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80),
 
 ]
 
@@ -142,6 +142,7 @@ species
   num_par_x(1:3) = 2,2,2,
   add_tag = .true.,
   push_type = {pusher},
+  active_gca_components = "EXB", "gradB", "vEgradb", "E_par_F", "vEbgradb_F", "vEvEgradb_F", "mirror_F",
 }}
 
 !----------inital proper velocities----------
@@ -548,7 +549,7 @@ def write_tag_files(base_dir, pushers, tag_source_path=None, output_name="tag_fi
 if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor")
     TAGS = True
-    TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4_Mirror/dtw10/tag_file_osiris_utils.tag"
+    TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4/dtw0_01/tag_file_osiris_utils.tag"
     # TAG_SOURCE_PATH = None
     created_dirs = create_simulation_tree(root, pushers)
     if TAGS:
