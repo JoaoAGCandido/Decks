@@ -11,7 +11,7 @@ class SimOpts:
         dtw_values,
         pusher,
         worktree=True,
-        sim_time="0-24:00:00",
+        sim_time="0-01:00:00",
         branch=None,
         worktree_folder=None,
         n_cells=DEFAULT_N_CELLS,
