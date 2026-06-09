@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=gcaRefactorGcav7_explicit_ noevegradb_f0_0001
+#SBATCH --job-name=gcaRefactorGcav7_explicit_noevegradb_f0_001
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-24:00:00
@@ -20,6 +20,6 @@ WORKTREE="$WTBASE/deucalion_gca"
 # ---- executable + input ----
 EXE="osiris-3D-${BRANCH}.e"
 BIN="$WORKTREE/bin/$EXE"
-INPUT="Gcav7_explicit_ noevegradb_f.in"
+INPUT="Gcav7_explicit_noevegradb_f.in"
 
 srun "$BIN" "$INPUT"

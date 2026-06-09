@@ -40,7 +40,7 @@ pushers = [
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
     # SimOpts('Gcav4_Mirror_Prec', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
-    SimOpts('Gcav7_explicit_ noevegradb_f', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80),
+    SimOpts('Gcav7_explicit_noevegradb_f', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80),
 
 ]
 
