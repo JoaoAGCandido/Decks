@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         1027888954.,
+  "input_deck_crc":         3493293231.,
   "input_deck": """
 simulation
 {
@@ -112,10 +112,10 @@ species
   add_tag = .true.,
   push_type = "gca",
   active_gca_components = "EXB", "gradB", "curv", "vEgradb", "E_par_F", "vEbgradb_F", "vEvEgradb_F", "mirror_F",
-  gca_pos_max_iter = 100
-  gca_mirror_max_iter = 100
-  gca_pos_res = 1.0e-16
-  gca_mirror_tol = 1.0e-16
+  gca_pos_max_iter = 100,
+  gca_mirror_max_iter = 100,
+  gca_pos_res = 1.0e-16,
+  gca_mirror_tol = 1.0e-7,
 }
 
 !----------inital proper velocities----------
