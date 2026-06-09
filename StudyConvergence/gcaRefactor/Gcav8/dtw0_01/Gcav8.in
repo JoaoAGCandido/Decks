@@ -96,6 +96,7 @@ species
   gca_pos_res = 1.0e-16,
   gca_mirror_tol = 1.0e-7,
   gca_force_explicit_mirror = .false.,
+  push_start_time = 0.0,
 }
 
 !----------inital proper velocities----------
