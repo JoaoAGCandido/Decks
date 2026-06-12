@@ -41,9 +41,7 @@ pushers = [
     # SimOpts('GcaHighRes', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
-    # SimOpts('Gcav4_Mirror_Prec', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
-    SimOpts('Gcav8_pushstart', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, pushstart=True, test="curv"),
-
+    SimOpts('Gcav9_track2', ["1"], 'gca', branch="deucalion_gca", n_cells=80, test="curv"),
 ]
 
 BASE_DTW = 0.01
@@ -185,6 +183,13 @@ diag_species
   {tag_comment}file_tags = "tag_file_osiris_utils.tag",
   {tag_comment}ifdmp_tracks_efl(1:3) = .true., .true., .true.,
   {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
+  {tag_comment}ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
+  {tag_comment}ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
+  {tag_comment}ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
+  {tag_comment}ifdmp_tracks_gca_p_parallel = .true.,
+  {tag_comment}ifdmp_tracks_gca_mu_m = .true.,
+  {tag_comment}ifdmp_tracks_gca_drifts = "all",!"EXB", "gradB", "curv",
 }}
 
 !-------------smooth for currents-------------
