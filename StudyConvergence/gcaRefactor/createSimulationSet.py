@@ -41,7 +41,7 @@ pushers = [
     # SimOpts('GcaHighRes', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
-    SimOpts('Gcav9_track2', ["1"], 'gca', branch="deucalion_gca", n_cells=80, test="curv"),
+    SimOpts('GcaExplicitv1', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr', branch="deucalion_gcaExplicit", n_cells=80, test="curv"),
 ]
 
 BASE_DTW = 0.01
@@ -142,13 +142,13 @@ species
   num_par_x(1:3) = 2,2,2,
   add_tag = .true.,
   push_type = {pusher},
-  active_gca_components = "all", !"EXB", "gradB", "curv", "vEgradb", "E_par_F", "vEbgradb_F", "mirror_F",
-  gca_pos_max_iter = 100,
-  gca_mirror_max_iter = 100,
-  gca_pos_res = 1.0e-16,
-  gca_mirror_tol = 1.0e-7,
-  gca_force_explicit_mirror = .false.,
-  push_start_time = {push_start_time},
+  !active_gca_components = "all", !"EXB", "gradB", "curv", "vEgradb", "E_par_F", "vEbgradb_F", "mirror_F",
+  !gca_pos_max_iter = 100,
+  !gca_mirror_max_iter = 100,
+  !gca_pos_res = 1.0e-7,
+  !gca_mirror_tol = 1.0e-7,
+  !gca_force_explicit_mirror = .false.,
+  !push_start_time = {push_start_time},
 }}
 
 !----------inital proper velocities----------
@@ -183,13 +183,12 @@ diag_species
   {tag_comment}file_tags = "tag_file_osiris_utils.tag",
   {tag_comment}ifdmp_tracks_efl(1:3) = .true., .true., .true.,
   {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_gca_p_parallel = .true.,
-  {tag_comment}ifdmp_tracks_gca_mu_m = .true.,
-  {tag_comment}ifdmp_tracks_gca_drifts = "all",!"EXB", "gradB", "curv",
+  !{tag_comment}ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_gca_p_parallel = .true.,
+  !{tag_comment}ifdmp_tracks_gca_mu_m = .true.,
+  !{tag_comment}ifdmp_tracks_gca_drifts = "all", !"EXB", "gradB", "curv",
 }}
 
 !-------------smooth for currents-------------
