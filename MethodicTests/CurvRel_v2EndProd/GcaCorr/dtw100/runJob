@@ -20,6 +20,6 @@ WORKTREE="$WTBASE/deucalion_gcaExplicit"
 # ---- executable + input ----
 EXE="osiris-3D-${BRANCH}.e"
 BIN="$WORKTREE/bin/$EXE"
-INPUT="GcaExplicitv1.in"
+INPUT="GcaCorr.in"
 
 srun "$BIN" "$INPUT"
