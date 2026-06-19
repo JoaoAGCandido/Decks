@@ -4,7 +4,7 @@
 #SBATCH --partition=normal-arm
 #SBATCH --time=0-01:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=8
+#SBATCH --ntasks=1
 
 module purge
 module load OpenMPI
@@ -20,6 +20,6 @@ WORKTREE="$WTBASE/deucalion_gca"
 # ---- executable + input ----
 EXE="osiris-3D-${BRANCH}.e"
 BIN="$WORKTREE/bin/$EXE"
-INPUT="Gca7.in"
+INPUT="Gca8.in"
 
 srun "$BIN" "$INPUT"
