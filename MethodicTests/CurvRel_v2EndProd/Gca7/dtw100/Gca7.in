@@ -92,10 +92,8 @@ species
   push_type = "gca",
   active_gca_components = ,
   gca_pos_max_iter = 1000,
-  gca_mirror_max_iter = 100,
-  gca_pos_res = 1.0e-7,
-  gca_mirror_tol = 1.0e-7,
-  gca_force_explicit_mirror = .true.,
+  gca_pos_res = 1.0e-14,
+
 }
 
 !----------inital proper velocities----------
