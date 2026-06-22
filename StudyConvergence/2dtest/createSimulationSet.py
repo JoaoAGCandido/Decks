@@ -40,9 +40,9 @@ pushers = [
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
     # SimOpts('Gcav4_Mirror_Prec', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=80, test="mirror"),
-    SimOpts('Gcav5_nx100', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=100),
-    SimOpts('Gcav5_nx200', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=200),
-    SimOpts('Gcav5_nx400', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="deucalion_gca", n_cells=400),
+    # SimOpts('GcaCorr_nx100', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca_corr', branch="deucalion_gcaExplicit", n_cells=100),
+    # SimOpts('GcaCorr_nx200', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca_corr', branch="deucalion_gcaExplicit", n_cells=200),
+    SimOpts('GcaCorr_nx400', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca_corr', branch="deucalion_gcaExplicit", n_cells=400),
 
 ]
 
@@ -549,7 +549,7 @@ if __name__ == "__main__":
     root = Path("/home/exxxx5/Tese/Decks/StudyConvergence/2dtest")
     TAGS = True
     TAG_SOURCE_PATH = None
-    # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4_Mirror/dtw10/tag_file_osiris_utils.tag"
+    # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/2dtest/Gcav5_nx400/dtw0_1/tag_file_osiris_utils.tag"
     created_dirs = create_simulation_tree(root, pushers)
     if TAGS:
         created_tags = write_tag_files(root, pushers, TAG_SOURCE_PATH)
