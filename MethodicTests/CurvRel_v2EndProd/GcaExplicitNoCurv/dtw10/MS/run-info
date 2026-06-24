@@ -1,5 +1,5 @@
 build_info = {
-  "version": "4.4.4-334-ge7f76e1",
+  "version": "4.4.4-336-g8d95eca",
   "branch": "deucalion_gcaExplicit",
   "dimensions": "3",
   "precision": "DOUBLE",
@@ -8,7 +8,7 @@ build_info = {
   "build_tool": "make",
   "build_flags": {
     "FPP"  :"gfortran -C -E -x assembler-with-cpp -DHDF5",
-    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-334-ge7f76e1\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
+    "FPPF" :"-DP_X_DIM=3 -DOS_REV=\"4.4.4-336-g8d95eca\" -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE -DFFTW_ENABLED -DENABLE_NEUTRAL_SPIN -DENABLE_XXFEL",
     "F90"  :"mpif90 -cpp",
     "F90F" :"-pipe -ffree-line-length-none -fno-range-check -O2 -ftree-vectorize -march=native -fno-math-errno -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/include -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/OpenMPI/4.1.4-GCC-11.3.0/lib -I/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/1/1.12.2-gompi-2022a/include/ -I/eb/aarch64/software/FFTW/3.3.10-llvm-compilers-21.1.8/include",
     "CF"   :"-Ofast -std=c99 -O2 -ftree-vectorize -march=native -fno-math-errno -DFORTRANSINGLEUNDERSCORE -DPRECISION_DOUBLE",
@@ -17,7 +17,7 @@ build_info = {
    }
 }
 run_info = {
-  "input_deck_crc":         2736913641.,
+  "input_deck_crc":         1367156319.,
   "input_deck": """
 simulation 
 {

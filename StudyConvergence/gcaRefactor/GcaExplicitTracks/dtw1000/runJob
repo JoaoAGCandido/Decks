@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --job-name=gcaRefactorGcaExplicitTracks1000
+#SBATCH --account=f202500196cpcaa3a
+#SBATCH --partition=normal-arm
+#SBATCH --time=0-01:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+
+module purge
+module load OpenMPI
+ml HDF5/1.12.2-gompi-2022a
+module load FFTW
+
+# ---- choose branch here ----
+BRANCH="deucalion_gcaExplicit"
+WTBASE="$HOME/osiris_worktrees"
+
+WORKTREE="$WTBASE/deucalion_gcaExplicit"
+
+# ---- executable + input ----
+EXE="osiris-3D-${BRANCH}.e"
+BIN="$WORKTREE/bin/$EXE"
+INPUT="GcaExplicitTracks.in"
+
+srun "$BIN" "$INPUT"
