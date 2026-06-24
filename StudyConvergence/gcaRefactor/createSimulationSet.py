@@ -41,7 +41,7 @@ pushers = [
     # SimOpts('GcaHighRes', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca')
     # SimOpts('gcaNoDrifts_doublePrecDiag_and_Gca_nx180', ["1000", "500", "100", "50", "10", "1", "0_1", "0_01", "0_001", "0_0001"], 'gca', branch="gcaNoDrifts_doublePrecDiag_and_Gca", worktree_folder='gcaNoDrifts_doublePrecDiag_and_Gca'),
     # SimOpts('Gcav4', ["100", "1", "0_01"], 'gca', branch="deucalion_gca", n_cells=80),
-    SimOpts('GcaExplicitTracks', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_corr', branch="deucalion_gcaExplicit", n_cells=80, test="curv"),
+    SimOpts('GcaExplicitTracks', ["1000", "500", "100", "50", "10", "1", "0_1"], 'gca_expl', branch="deucalion_gcaExplicit", n_cells=80, test="curv"),
 ]
 
 BASE_DTW = 0.01
