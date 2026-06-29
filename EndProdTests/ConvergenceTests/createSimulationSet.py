@@ -11,7 +11,7 @@ class SimOpts:
         dtw_values,
         pusher,
         worktree=True,
-        sim_time="0-00:05:00",
+        sim_time="0-00:15:00",
         branch=None,
         worktree_folder=None,
         n_cells=DEFAULT_N_CELLS,
@@ -188,14 +188,14 @@ diag_species
   {tag_comment}ndump_fac_tracks = {ndump_fac_tracks},
   {tag_comment}niter_tracks = {niter_tracks},
   {tag_comment}file_tags = "tag_file_osiris_utils.tag",
-  {tag_comment}ifdmp_tracks_efl(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_efl(1:3) = .true., .true., .true.,
   {tag_comment}ifdmp_tracks_bfl(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
-  {tag_comment}ifdmp_tracks_gca_p_parallel = .true.,
-  {tag_comment}ifdmp_tracks_gca_mu_m = .true.,
-  {tag_comment}ifdmp_tracks_gca_drifts = "all", !"EXB", "gradB", "curv",
+  !{tag_comment}ifdmp_tracks_db_dx1(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_db_dx2(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_db_dx3(1:3) = .true., .true., .true.,
+  !{tag_comment}ifdmp_tracks_gca_p_parallel = .true.,
+  !{tag_comment}ifdmp_tracks_gca_mu_m = .true.,
+  !{tag_comment}ifdmp_tracks_gca_drifts = "all", !"EXB", "gradB", "curv",
 }}
 
 !-------------smooth for currents-------------
@@ -574,7 +574,7 @@ def write_tag_files(base_dir, pushers, tag_source_path=None, output_name="tag_fi
 
 if __name__ == "__main__":
     root = Path("EndProdTests/ConvergenceTests")
-    TAGS = False
+    TAGS = True
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4/dtw0_01/tag_file_osiris_utils.tag"
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4_Mirror/dtw0_01/tag_file_osiris_utils.tag"
     TAG_SOURCE_PATH = None

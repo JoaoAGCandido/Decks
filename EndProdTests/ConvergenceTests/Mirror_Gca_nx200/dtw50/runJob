@@ -2,7 +2,7 @@
 #SBATCH --job-name=ConvergenceTestsMirror_Gca_nx20050
 #SBATCH --account=f202500196cpcaa3a
 #SBATCH --partition=normal-arm
-#SBATCH --time=0-00:05:00
+#SBATCH --time=0-00:15:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 
