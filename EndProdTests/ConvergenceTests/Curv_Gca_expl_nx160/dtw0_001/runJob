@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=ConvergenceTestsCurv_Gca_expl_nx1600_001
+#SBATCH --account=f202500196cpcaa3a
+#SBATCH --partition=normal-arm
+#SBATCH --time=0-00:15:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+
+module purge
+module load OpenMPI
+ml HDF5/1.12.2-gompi-2022a
+module load FFTW
+
+BIN="$HOME/osiris_JCDev/bin/osiris-3D-gcaAllFeats.e"
+
+srun "${BIN}" Curv_Gca_expl_nx160.in
