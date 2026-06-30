@@ -574,7 +574,7 @@ def write_tag_files(base_dir, pushers, tag_source_path=None, output_name="tag_fi
 
 if __name__ == "__main__":
     root = Path("EndProdTests/ConvergenceTests")
-    TAGS = False
+    TAGS = True
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4/dtw0_01/tag_file_osiris_utils.tag"
     # TAG_SOURCE_PATH = "/home/exxxx5/Tese/Decks/StudyConvergence/gcaRefactor/Gcav4_Mirror/dtw0_01/tag_file_osiris_utils.tag"
     TAG_SOURCE_PATH = None
